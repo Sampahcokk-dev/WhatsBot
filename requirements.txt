@@ -1,0 +1,5 @@
+google_trans_new
+flask
+bs4
+googlesearch
+wikipedia
