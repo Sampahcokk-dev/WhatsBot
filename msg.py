@@ -111,15 +111,60 @@ def main():
 		
 		reply={"reply":"trasnlet jadi\n"+jadi}
 		
-	if strd[0]==prefix and strd[1]=="covid" and strd[2]=="indo":
+	if strd[0]==prefix and strd[1]=="covid":
+		if strd[2]=="indo":
+			
 	    
-	    page =rq.get('https://covid19.go.id')
+			page =rq.get('https://covid19.go.id')
 	     
-	    soup=BeautifulSoup(page.text,'html.parser')
+			soup=BeautifulSoup(page.text,'html.parser')
 	    
-	    div=soup.findAll('div',{'class':'col-md-3 text-color-black p-4'})
+			div=soup.findAll('div',{'class':'col-md-3 text-color-black p-4'})
 	    
-	    reply={"reply":div[1].text}
+			reply={"reply":div[1].text}
+		
+		if strd[2]=="bontang":
+			
+			a =rq.get("http://gugus-covid.bontangkota.go.id/?page_id=556")
+			soup=BeautifulSoup(a.text,'html.parser')
+			div=soup.findAll('div',{'data-number-value':True})
+		
+			jadi="yang positip :" +div[0].get("data-number-value")+"\nyang sembuh:"+div[1].get("data-number-value")+"\nyang meninggoy:" +div[2].get("data-number-value")+"\nsource: http://gugus-covid.bontangkota.go.id/?page_id=556" 
+
+			reply={"reply":jadi}
+			
+	    
+	    if strd[2]=="total":
+			if strd[3]=="aktif":
+				
+				aktip=kopid.get_total_active_cases()
+			
+				reply={"reply":str(aktip)+" total yg aktip 1dunia"}
+
+			if strd[3]=="mati":
+				
+				mati=kopid.get_total_deaths()
+				
+				reply={"reply":str(mati)+" total yang Innalilahi"}
+			
+			if strd[3]=="sembuh":
+				
+				smbuh=kopid.get_total_recovered()
+				
+				reply={"reply":str(smbuh)+" total yang Alhamdulillah"}
+			
+			if strd[3]=="konfirm":
+				
+				konfirm=kopid.get_total_confirmed_cases()
+				
+				reply={"reply":str(konfirm)+" yang ke konfirm"}
+			else:
+				try:
+					n=kopid.get_status_by_country_name(strd[2])
+					reply={"reply":str(n['country'])+"\n"+str(n['confirmed'])+"confirmed\n"+str(n['active'])+"yang aktip\n"+str(n['deaths'])+" yang meninggal\n"+str(n['recovered'])+" yang sembuh"}
+					
+				except:
+					reply={"reply":"negara apa itu goblok! gaad"}
 	    
 	
 	if strd[0]==prefix and strd[1]=="cari":
@@ -150,15 +195,7 @@ def main():
 		
 		reply={"reply" :strd[2] +" dan " +strd[4] +"  *" +hasilRand +"%*"+" cocok" }
  
-	if strd[0]==prefix and strd[1]=="covid" and strd[2]=="bontang":
-		
-		a =rq.get("http://gugus-covid.bontangkota.go.id/?page_id=556")
-		soup=BeautifulSoup(a.text,'html.parser')
-		div=soup.findAll('div',{'data-number-value':True})
-		
-		jadi="yang positip :" +div[0].get("data-number-value")+"\nyang sembuh:"+div[1].get("data-number-value")+"\nyang meninggoy:" +div[2].get("data-number-value")+"\nsource: http://gugus-covid.bontangkota.go.id/?page_id=556" 
 
-		reply={"reply":jadi}
  
 	if strd[0]==prefix and strd[1]=="apaka" :
 		
