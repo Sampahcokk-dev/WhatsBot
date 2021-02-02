@@ -1,5 +1,5 @@
 google_trans_new
-flask
+Flask
 bs4
-googlesearch
+googlesearch-python
 wikipedia
