@@ -387,7 +387,7 @@ def main():
 			bod=jh.findAll("tr",{"class":"lastrow"})
 
 			if bod: 
-				reply={"reply" :b+"\n\nhttps://elearning.smpypvdp.sch.id/mod/attendance/view.php?id=" +idPel"\n\n"+str(ewq.status_code) +"\n\nAda Absen\n"+bod[1].text}
+				reply={"reply" :b+"\n\nhttps://elearning.smpypvdp.sch.id/mod/attendance/view.php?id=" +idPel+"\n\n"+str(ewq.status_code) +"\n\nAda Absen\n"+bod[1].text}
 			else:
 				reply={"reply" :b+"\n\n"+str(ewq.status_code) +"\n\n"+bod[1].text}
 				
