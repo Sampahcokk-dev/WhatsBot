@@ -93,7 +93,7 @@ def main():
 			return jsonify(reply)
 		
 		if  strd[1]=="ngomong":
-			
+
 			
 			strd.pop(1)
 			strd.pop(0)
@@ -102,9 +102,7 @@ def main():
 			
 			reply={"reply":"*BOT*\n"+jadi}
 
-		if  strd[1]=="time":
-
-			reply={"reply":"waktu:\n"+str(dt.datetime.now())}
+		
 			
 		if  strd[1]=="translet":
 			
@@ -120,6 +118,10 @@ def main():
 				jadi= translet.translate(jadi,lang_tgt=strd[-1])
 			
 			reply={"reply":"trasnlet jadi\n"+jadi}
+		
+		if  strd[1]=="time":
+
+			reply={"reply":"waktu:\n"+str(dt.datetime.now())}
 			
 		if  strd[1]=="covid":
 			if strd[2]=="indo":
