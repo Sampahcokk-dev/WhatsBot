@@ -26,6 +26,11 @@ def main():
 	
 	strd = message.split(" ")
 	
+	if message =="prefix":
+			
+			reply={"reply":"*PREFIXNYA ITU*"+data["k"][0]["prefix"]}
+			return jsonify(reply)
+
 	if strd[0]==prefix:
 
 		
@@ -95,10 +100,7 @@ def main():
 			
 			reply={"reply":"*BOT*\n"+jadi}
 			
-		if message =="prefix":
-			
-			reply={"reply":"*PREFIXNYA ITU*"+data["k"][0]["prefix"]}
-			return jsonify(reply)
+		
 			
 		if  strd[1]=="time":
 			
@@ -392,8 +394,7 @@ def main():
 				reply={"reply" :b+"\n\n"+str(ewq.status_code) +"\n\n"+bod[1].text}
 				
 			
-	if not reply:
-		reply={"g" :"a"} 
+	
 
 	return jsonify(reply)
 
