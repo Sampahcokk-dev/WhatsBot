@@ -278,7 +278,7 @@ def main():
 		if  strd[1]=="doa":
 
 			if strd[2]=="setelah" and strd[3]=="adzan":
-				reply={"reply":"""Doa Setelah Adzan\nMembaca doa setelah adzan adalah sunnah. Adapun bacaan doa setelah adzan yaitu,\n\n"Allaahumma robba haadzihid da'watit taammah, washsholaatil qoo-imah, aati muhammadanil washiilata wal fadhiilah, wasysyarofa, wad darajatal, 'aaliyatar rofii'ah, wab'atshu maqoomam mahmuudanil ladzii wa'adtah, innaka laa tukhliful mii'aadz."\n\nArtinya:\n"Yaa Allah, Tuhan yang mempunyai seruan yang sempurna dan shalat yang ditegakkan ini, berikanlah dengan limpah karuniaMu kepada Nabi Muhammad kedudukan dan keutamaan (paling tinggi) dan limpahkanlah kepadanya tempat yang terpuji yang telah engkau janjikan.""""}
+				reply={"reply":"""Doa Setelah Adzan\nMembaca doa setelah adzan adalah sunnah. Adapun bacaan doa setelah adzan yaitu,\n\n"Allaahumma robba haadzihid da'watit taammah, washsholaatil qoo-imah, aati muhammadanil washiilata wal fadhiilah, wasysyarofa, wad darajatal, 'aaliyatar rofii'ah, wab'atshu maqoomam mahmuudanil ladzii wa'adtah, innaka laa tukhliful mii'aadz."\n\nArtinya:\n"Yaa Allah, Tuhan yang mempunyai seruan yang sempurna dan shalat yang ditegakkan ini, berikanlah dengan limpah karuniaMu kepada Nabi Muhammad kedudukan dan keutamaan (paling tinggi) dan limpahkanlah kepadanya tempat yang terpuji yang telah engkau janjikan"."""}
 
 			if strd[2]=="ulangan":
 				
