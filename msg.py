@@ -354,7 +354,7 @@ def main():
 				idPel=""
 			if strd[3]=="matdas":
 				idPel="2896"
-			if strd[3]==="agama":
+			if strd[3]=="agama":
 				idPel="2115"
 			if strd[3]=="mtk":
 				idPel=""
