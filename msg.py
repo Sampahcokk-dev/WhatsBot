@@ -277,6 +277,9 @@ def main():
 			
 		if  strd[1]=="doa":
 
+			if strd[2]=="setelah" and strd[3]=="adzan":
+				reply={"reply":"""Doa Setelah Adzan\nMembaca doa setelah adzan adalah sunnah. Adapun bacaan doa setelah adzan yaitu,\n\n"Allaahumma robba haadzihid da'watit taammah, washsholaatil qoo-imah, aati muhammadanil washiilata wal fadhiilah, wasysyarofa, wad darajatal, 'aaliyatar rofii'ah, wab'atshu maqoomam mahmuudanil ladzii wa'adtah, innaka laa tukhliful mii'aadz."\n\nArtinya:\n"Yaa Allah, Tuhan yang mempunyai seruan yang sempurna dan shalat yang ditegakkan ini, berikanlah dengan limpah karuniaMu kepada Nabi Muhammad kedudukan dan keutamaan (paling tinggi) dan limpahkanlah kepadanya tempat yang terpuji yang telah engkau janjikan.""""}
+
 			if strd[2]=="ulangan":
 				
 				reply={"reply" :"""Doa Ketika UTBK 2021 akan Dilaksanakan\nاَللَّهُمَّ لاَ سَهْلَ إِلاَّ مَا جَعَلْتَهُ سَهْلاً وَأَنْتَ تَجْعَلُ الْحَزْنَ إِذَا شِئْتَ سَهْلاً\n\nLafadz: Allaahumma laa sahla illaa maa ja’altahu sahlan wa anta taj’alul hazna idzaa syi’ta sahlan.\nArti: Ya Allah! Tidak ada kemudahan kecuali apa yang Engkau jadikan mudah. Sedang yang susah bisa Engkau jadikan mudah, apabila Engkau menghendakinya.\nSumber: Shahih Ibnu Hibban No. 2427 (Syaikh ‘Abdul Qadir Al Arna’uth menyatakan shahih dalam Takhrij Al Adzkar hal. 106)"""} 
@@ -345,6 +348,19 @@ def main():
 				idPel="1640"
 			if strd[3]=="kry":
 				idPel="9004"
+			if strd[3]=="olga":
+				idPel="901"
+			if strd[3]=="bing":
+				idPel=""
+			if strd[3]=="matdas":
+				idPel="2896"
+			if strd[3]==="agama":
+				idPel="2115"
+			if strd[3]=="mtk":
+				idPel=""
+			if strd[3]=="conver":
+				idPel=""
+
 				
 			s=rq.session()
 
@@ -359,7 +375,7 @@ def main():
 
 
 
-			login={"username":"6531","password":"2252006","logintoken":b,"anchor":""}
+			login={"username":"tauguag","password":"Passnyagampangcuma123","logintoken":b,"anchor":""}
 
 			ewq=s.post("https://elearning.smpypvdp.sch.id/login/index.php",login)
 
@@ -370,10 +386,10 @@ def main():
 
 			bod=jh.findAll("tr",{"class":"lastrow"})
 
-	if bod: 
-		reply={"reply" :b+"\n\n"+str(ewq.status_code) +"\n\nAda Absen\n"+bod[1].text}
-	else:
-		reply={"reply" :b+"\n\n"+str(ewq.status_code) +"\n\n"+bod[1].text}
+			if bod: 
+				reply={"reply" :b+"\n\nhttps://elearning.smpypvdp.sch.id/mod/attendance/view.php?id=" +idPel"\n\n"+str(ewq.status_code) +"\n\nAda Absen\n"+bod[1].text}
+			else:
+				reply={"reply" :b+"\n\n"+str(ewq.status_code) +"\n\n"+bod[1].text}
 				
 			
 	if not reply:
