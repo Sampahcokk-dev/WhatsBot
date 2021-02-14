@@ -33,6 +33,7 @@ def main():
 
 	if strd[0]==prefix:
 
+
 		
 		if  strd[1]=="tugas":
 			reply={"reply":"*TUGAS NYA ADALAH*\n"+ data["k"][0]["tugas"]}
@@ -74,7 +75,7 @@ def main():
 			
 			reply={"reply":"tugas berhasil diubah✅" }
 			
-		if  strd[1]  =="ubahprefix":
+		if  strd[1]=="ubahprefix":
 			
 
 			
@@ -93,17 +94,16 @@ def main():
 		
 		if  strd[1]=="ngomong":
 			
+			
 			strd.pop(1)
 			strd.pop(0)
 			
 			jadi=' '.join(strd)
 			
 			reply={"reply":"*BOT*\n"+jadi}
-			
-		
-			
+
 		if  strd[1]=="time":
-			
+
 			reply={"reply":"waktu:\n"+str(dt.datetime.now())}
 			
 		if  strd[1]=="translet":
@@ -393,6 +393,8 @@ def main():
 			else:
 				reply={"reply" :b+"\n\n"+str(ewq.status_code) +"\n\n"+bod[1].text}
 				
+	else:
+		reply={"g":"a"}
 			
 	
 
