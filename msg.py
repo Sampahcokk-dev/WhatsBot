@@ -277,19 +277,19 @@ def main():
 			
 		if  strd[1]=="doa":
 
-			strd[2]=="ulangan":
+			if strd[2]=="ulangan":
 				
 				reply={"reply" :"""Doa Ketika UTBK 2021 akan Dilaksanakan\nاَللَّهُمَّ لاَ سَهْلَ إِلاَّ مَا جَعَلْتَهُ سَهْلاً وَأَنْتَ تَجْعَلُ الْحَزْنَ إِذَا شِئْتَ سَهْلاً\n\nLafadz: Allaahumma laa sahla illaa maa ja’altahu sahlan wa anta taj’alul hazna idzaa syi’ta sahlan.\nArti: Ya Allah! Tidak ada kemudahan kecuali apa yang Engkau jadikan mudah. Sedang yang susah bisa Engkau jadikan mudah, apabila Engkau menghendakinya.\nSumber: Shahih Ibnu Hibban No. 2427 (Syaikh ‘Abdul Qadir Al Arna’uth menyatakan shahih dalam Takhrij Al Adzkar hal. 106)"""} 
 				
-			strd[2]=="makan":
+			if strd[2]=="makan":
 				
 				reply={"reply":"""Doa Sebelum Makan\n اَللّٰهُمَّ بَارِكْ لَنَا فِيْمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ \n"Allahumma baarik lanaa fiimaa rozaqtanaa wa qinaa 'adzaa bannaar." \nArtinya: "Ya Allah, berkahilah kami dalam rezeki yang telah Engkau berikan kepada kami dan peliharalah kami dari siksa api neraka."""} 
 				
-			strd[2]=="bangun" and strd[3]=="tidur":
+			if strd[2]=="bangun" and strd[3]=="tidur":
 				
 				reply={"reply" :"Doa bangun tidur lain yang bisa diamalkan muslim dalam versi pendek yang sudah masyhur yakni:\nالْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ \nAlhamdulillahilladzii akhyaana ba'da maa amaatanaa wa ilaihin nusyuur.\nArtinya: Segala puji bagi Allah yang telah menghidupkan kami setelah mematikan kami, dan kepada-Nya lah tempat kembali.\nDoa ini bersumber dari Hadis Nabi SAW dalah sahih Bukhari."} 
 				
-			strd[2]=="tidur":
+			if strd[2]=="tidur":
 				reply={"reply":"""Doa Sebelum Tidur/foto:istimewa \nبِسْمِكَ اللّهُمَّ اَحْيَا وَ بِسْمِكَ اَمُوْتُ \n“Bismika Allahumma ahyaa wa bismika amuut”.\nArtinya: “Dengan nama-Mu ya Allah aku hidup, dan dengan nama-Mu aku mati”. (HR.Bukhari dan Muslim)."""} 
 			
 		
