@@ -3,10 +3,11 @@ from google_trans_new import google_translator
 from bs4 import BeautifulSoup
 import requests as rq 
 from googlesearch import search
-import random,wikipedia
-
+import random,wikipedia, time
+from covid import Covid
+import datetime as dt
  
-
+kopid=Covid(source="worldometers") 
 
 translet=google_translator()
 
@@ -96,6 +97,10 @@ def main():
 		reply={"reply":"*PREFIXNYA ITU*"+data["k"][0]["prefix"]}
 		return jsonify(reply)
 		
+	if strd[0]==prefix and strd[1]=="time":
+		
+		reply={"reply":"waktu:\n"+str(dt.datetime.now())}
+		
 	if strd[0]==prefix and strd[1]=="translet":
 		
 		strd.pop(1)
@@ -134,7 +139,7 @@ def main():
 			reply={"reply":jadi}
 			
 	    
-	    if strd[2]=="total":
+		if strd[2]=="total":
 			if strd[3]=="aktif":
 				
 				aktip=kopid.get_total_active_cases()
@@ -158,13 +163,13 @@ def main():
 				konfirm=kopid.get_total_confirmed_cases()
 				
 				reply={"reply":str(konfirm)+" yang ke konfirm"}
-			else:
-				try:
-					n=kopid.get_status_by_country_name(strd[2])
-					reply={"reply":str(n['country'])+"\n"+str(n['confirmed'])+"confirmed\n"+str(n['active'])+"yang aktip\n"+str(n['deaths'])+" yang meninggal\n"+str(n['recovered'])+" yang sembuh"}
+		else:
+			try:
+				n=kopid.get_status_by_country_name(strd[2])
+				reply={"reply":str(n['country'])+"\n"+str(n['confirmed'])+"confirmed\n"+str(n['active'])+"yang aktip\n"+str(n['deaths'])+" yang meninggal\n"+str(n['recovered'])+" yang sembuh"}
 					
-				except:
-					reply={"reply":"negara apa itu goblok! gaad"}
+			except:
+				reply={"reply":"negara apa itu goblok! gaad"}
 	    
 	
 	if strd[0]==prefix and strd[1]=="cari":
@@ -195,7 +200,7 @@ def main():
 		
 		reply={"reply" :strd[2] +" dan " +strd[4] +"  *" +hasilRand +"%*"+" cocok" }
  
-
+	
  
 	if strd[0]==prefix and strd[1]=="apaka" :
 		
@@ -255,9 +260,17 @@ def main():
 		
 		reply={"reply":"*kata ilham* mending "+ hasilRndom}
 		
+	if strd[0]==prefix and strd[1]=="doa" and strd[2]=="ulangan":
+		
+		reply={"reply" :"""Doa Ketika UTBK 2021 akan Dilaksanakan\nاَللَّهُمَّ لاَ سَهْلَ إِلاَّ مَا جَعَلْتَهُ سَهْلاً وَأَنْتَ تَجْعَلُ الْحَزْنَ إِذَا شِئْتَ سَهْلاً\n\nLafadz: Allaahumma laa sahla illaa maa ja’altahu sahlan wa anta taj’alul hazna idzaa syi’ta sahlan.\nArti: Ya Allah! Tidak ada kemudahan kecuali apa yang Engkau jadikan mudah. Sedang yang susah bisa Engkau jadikan mudah, apabila Engkau menghendakinya.\nSumber: Shahih Ibnu Hibban No. 2427 (Syaikh ‘Abdul Qadir Al Arna’uth menyatakan shahih dalam Takhrij Al Adzkar hal. 106)"""} 
+		
 	if strd[0]==prefix and strd[1]=="doa" and strd[2]=="makan":
 		
 		reply={"reply":"""Doa Sebelum Makan\n اَللّٰهُمَّ بَارِكْ لَنَا فِيْمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ \n"Allahumma baarik lanaa fiimaa rozaqtanaa wa qinaa 'adzaa bannaar." \nArtinya: "Ya Allah, berkahilah kami dalam rezeki yang telah Engkau berikan kepada kami dan peliharalah kami dari siksa api neraka."""} 
+		
+	if strd[0]==prefix and strd[1]=="doa" and strd[2]=="bangun" and strd[3]=="tidur":
+		
+		reply={"reply" :"Doa bangun tidur lain yang bisa diamalkan muslim dalam versi pendek yang sudah masyhur yakni:\nالْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ \nAlhamdulillahilladzii akhyaana ba'da maa amaatanaa wa ilaihin nusyuur.\nArtinya: Segala puji bagi Allah yang telah menghidupkan kami setelah mematikan kami, dan kepada-Nya lah tempat kembali.\nDoa ini bersumber dari Hadis Nabi SAW dalah sahih Bukhari."} 
 		
 	if strd[0]==prefix and strd[1]=="doa"and strd[2]=="tidur":
 		reply={"reply":"""Doa Sebelum Tidur/foto:istimewa \nبِسْمِكَ اللّهُمَّ اَحْيَا وَ بِسْمِكَ اَمُوْتُ \n“Bismika Allahumma ahyaa wa bismika amuut”.\nArtinya: “Dengan nama-Mu ya Allah aku hidup, dan dengan nama-Mu aku mati”. (HR.Bukhari dan Muslim)."""} 
@@ -268,7 +281,37 @@ def main():
 		if strd[2]=="ayat" and strd[3]=="kursi":
 			
 			reply ={"reply" :"""Bacaan ayat kursi \nاللهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ وَلَا يَئُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ\n“Alloohu laa ilaaha illaa huwal hayyul qoyyuum, laa ta’khudzuhuu sinatuw walaa naum. Lahuu maa fissamaawaati wa maa fil ardli man dzal ladzii yasyfa’u ‘indahuu illaa biidznih, ya’lamu maa baina aidiihim wamaa kholfahum wa laa yuhiithuuna bisyai’im min ‘ilmihii illaa bimaa syaa’ wasi’a kursiyyuhus samaawaati wal ardlo walaa ya’uuduhuu hifdhuhumaa wahuwal ‘aliyyul ‘adhiim.” \n\n“Allah, tidak ada Tuhan (yang berhak atau boleh disembah), melainkan Dia yang hidup kekal lagi terus menerus mengurus (makhluk-Nya). Yang tidak mengantuk dan tidak juga tertidur. Kepunyaan-Nya adalah apa yang ada di langit dan apa yang ada di bumi. Tiada yang dapat memberi syafaat di sisi Allah tanpa izin-Nya"."""}
-
+	if strd[0]==prefix and strd[1]=="sleep" :
+		
+		
+		time.sleep(int(strd[2]))
+		
+		reply={"reply" :"test"} 
+	
+	if strd[0]==prefix and strd[1]=="game":
+		
+		if strd[2]=="jawab":
+			
+			jawab=int(strd[3])
+			
+			if data["k"] [0]["tebak"]==jawab:
+				reply={"reply":"*GG* lu bener jawabanny adalah" +str(data["k"] [0]["tebak"]) }
+			else:
+				reply={"reply" :"*BLOK* salah"} 
+		if strd [2]=="tebak":
+			
+			hasilRan=random.randrange(int(strd[3]),int(strd[5]))
+			
+			jsonFile=open("dataJson.json")
+			data=json.load(jsonFile)
+			data["k"][0]["tebak"]=hasilRan
+		
+			aFile=open("dataJson.json","w")
+			json.dump(data,aFile)
+			aFile.close()
+			
+			reply={"reply" :"dah coba tebak"} 
+			
 	if strd[0]==prefix and strd[1]=="ada"and strd[2]=="absen":
 		if strd[3]=="ips":
 			idPel="1640"
@@ -278,8 +321,12 @@ def main():
 			idPel="872"
 		if strd[3]=="pkn":
 			idPel="938"
-		if strd[3]="bindo":
+		if strd[3]=="bindo":
 			idPel="2033"
+		if strd[3]=="sbk":
+			idPel="1640"
+		if strd[3]=="kry":
+			idPel="9004"
 			
 		s=rq.session()
 
@@ -311,7 +358,8 @@ def main():
 			reply={"reply" :b+"\n\n"+str(ewq.status_code) +"\n\n"+bod[1].text}
 			
 		
-		
+		if not reply:
+			reply={"g" :"a"} 
 
 	return jsonify(reply)
 
