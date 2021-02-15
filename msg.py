@@ -31,6 +31,16 @@ def main():
 			reply={"reply":"*PREFIXNYA ITU*"+data["k"][0]["prefix"]}
 			return jsonify(reply)
 
+	if strd[0]==prefix and strd[1]=="ngomong":
+
+			
+			strd.pop(1)
+			strd.pop(0)
+			
+			jadi=' '.join(strd)
+			
+			reply={"reply":"*BOT*\n"+jadi}
+
 	if strd[0]==prefix:
 
 
@@ -47,6 +57,10 @@ def main():
 			strd.pop(0)
 			
 			jadi =' '.join(strd)
+
+			waktu=str(dt.datetime.now()
+
+			jadi="tlakir di update : "+waktu+"\n\n"+jadi
 			
 			jsonFile=open("dataJson.json")
 			data=json.load(jsonFile)
@@ -92,18 +106,7 @@ def main():
 			reply={"reply":"*PREFIX DIUBAH MENJADI*\n"+ data["k"][0]["prefix"]}
 			return jsonify(reply)
 		
-		if  strd[1]=="ngomong":
-
-			
-			strd.pop(1)
-			strd.pop(0)
-			
-			jadi=' '.join(strd)
-			
-			reply={"reply":"*BOT*\n"+jadi}
-
 		
-			
 		if  strd[1]=="translet":
 			
 			strd.pop(1)
@@ -394,6 +397,23 @@ def main():
 				reply={"reply" :b+"\n\nhttps://elearning.smpypvdp.sch.id/mod/attendance/view.php?id=" +idPel+"\n\n"+str(ewq.status_code) +"\n\nAda Absen\n"+bod[1].text}
 			else:
 				reply={"reply" :b+"\n\n"+str(ewq.status_code) +"\n\n"+bod[1].text}
+
+		if strd[1]=="salam" :
+
+			reply={"reply":"""السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ \nssalamualaikum wa rahmatullahi wa barakatuh.\n\nArtinya  “Salam damai untukmu dan semoga Rahmat serta Keberkahan Allah menyertaimu”. """}
+		if strd[1]=="jawab" and strd[2]=="salam":
+
+			reply={"reply":"""Kemudian bagi yang mendengarnya wajib menjawab dengan ucapan.\n\nوَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ\n\nWa ‘alaikum salam wa rahmatullahi wabarakatuh.\n\nArtinya: “Dan semoga keselamatan dan rahmat Allah serta keberhanNya terlimpah juga kepada kalian”"."""}
+
+		if strd[1]=="ketawa":
+
+			reply={"reply":"aowkkwokwokwo"}
+
+		if strd[1]=="update":
+
+			reply={"reply":"*New Update*\n\n"}
+		
+
 				
 	else:
 		reply={"g":"a"}
