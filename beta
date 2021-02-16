@@ -1,0 +1,8 @@
+from bs4 import BeautifulSoup
+
+a=rq.get("https://litequran.net/al-ikhlas")
+
+soup=BeautifulSoup(a.text,"html.parser")
+
+web=soup.findAll("li")
+print(web[0])

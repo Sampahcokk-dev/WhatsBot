@@ -15,7 +15,8 @@ app=Flask(__name__)
 @app.route('/',methods=['POST'])
 
 def main():
-	
+	reply=None
+
 	sender =request.form["sender"]
 	message=request.form["message"]
 	
@@ -39,6 +40,10 @@ def main():
 		
 		jadi =' '.join(strd)
 		
+		waktu=str(dt.datetime.now())
+
+		jadi=("tlakir di update : "+waktu+"\n\n"+jadi)
+
 		jsonFile=open("dataJson.json")
 		data=json.load(jsonFile)
 		data["k"][0]["tugas"]=jadi
@@ -277,10 +282,19 @@ def main():
 		
 	if strd[0]==prefix and strd[1]=="doa":
 		if strd[2]=="belajar":
+			
 			reply={"reply" :"""Doa sebelum belajar\n\n رَضِتُ بِااللهِ رَبَا وَبِالْاِسْلاَمِ دِيْنَا وَبِمُحَمَّدٍ نَبِيَا وَرَسُوْلاَ رَبِّ زِدْ نِيْ عِلْمًـاوَرْزُقْنِـيْ فَهْمًـا\n\nRodlittu billahiroba, Wabil islaamidiinaa, Wabimuhammadin nabiyyaa warasuula, Robbi zidnii ilmaan warzuqnii fahmaan\n\n “Kami rida Allah SWT sebagai Tuhanku, Islam sebagai agamaku, dan Nabi Muhammad sebagai Nabi dan Rasul, Ya Allah, tambahkanlah kepadaku ilmu dan berikanlah aku pengertian yang baik"."""} 
+
 		if strd[2]=="ayat" and strd[3]=="kursi":
 			
 			reply ={"reply" :"""Bacaan ayat kursi \nاللهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ وَلَا يَئُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ\n“Alloohu laa ilaaha illaa huwal hayyul qoyyuum, laa ta’khudzuhuu sinatuw walaa naum. Lahuu maa fissamaawaati wa maa fil ardli man dzal ladzii yasyfa’u ‘indahuu illaa biidznih, ya’lamu maa baina aidiihim wamaa kholfahum wa laa yuhiithuuna bisyai’im min ‘ilmihii illaa bimaa syaa’ wasi’a kursiyyuhus samaawaati wal ardlo walaa ya’uuduhuu hifdhuhumaa wahuwal ‘aliyyul ‘adhiim.” \n\n“Allah, tidak ada Tuhan (yang berhak atau boleh disembah), melainkan Dia yang hidup kekal lagi terus menerus mengurus (makhluk-Nya). Yang tidak mengantuk dan tidak juga tertidur. Kepunyaan-Nya adalah apa yang ada di langit dan apa yang ada di bumi. Tiada yang dapat memberi syafaat di sisi Allah tanpa izin-Nya"."""}
+
+		if strd[2]=="setelah" and strd[3]=="adzan":
+			
+			reply={"reply":"""Doa Setelah Adzan\nMembaca doa setelah adzan adalah sunnah. Adapun bacaan doa setelah adzan yaitu,\n\n"Allaahumma robba haadzihid da'watit taammah, washsholaatil qoo-imah, aati muhammadanil washiilata wal fadhiilah, wasysyarofa, wad darajatal, 'aaliyatar rofii'ah, wab'atshu maqoomam mahmuudanil ladzii wa'adtah, innaka laa tukhliful mii'aadz."\n\nArtinya:\n"Yaa Allah, Tuhan yang mempunyai seruan yang sempurna dan shalat yang ditegakkan ini, berikanlah dengan limpah karuniaMu kepada Nabi Muhammad kedudukan dan keutamaan (paling tinggi) dan limpahkanlah kepadanya tempat yang terpuji yang telah engkau janjikan"."""}
+
+
+
 	if strd[0]==prefix and strd[1]=="sleep" :
 		
 		
@@ -327,6 +341,18 @@ def main():
 			idPel="1640"
 		if strd[3]=="kry":
 			idPel="9004"
+		if strd[3]=="olga":
+			idPel="901"
+		if strd[3]=="bing":
+			idPel=""
+		if strd[3]=="matdas":
+			idPel="2896"
+		if strd[3]=="agama":
+			idPel="2115"
+		if strd[3]=="mtk":
+			idPel=""
+		if strd[3]=="conver":
+			idPel=""
 			
 		s=rq.session()
 
@@ -357,9 +383,32 @@ def main():
 		else:
 			reply={"reply" :b+"\n\n"+str(ewq.status_code) +"\n\n"+bod[1].text}
 			
+	if strd[0]==prefix and strd[1]=="hadits":
+
+		a=rq.get("https://m.bola.com/ragam/read/4268283/25-kata-kata-mutiara-islami-dari-hadist-nabi-menenangkan-dan-memberi-pelajaran") 
+		soup=BeautifulSoup(a.text,"html.parser")
+		web=soup.findAll("div",{"class":"article-raw-content"})
+			
+		jadi=web[1].findChildren()
+
+		intny=int(strd[2])
+
+		reply={"reply":jadi[intny]}
+
+	if strd[0]and strd[1]=="salam" :
+
+		reply={"reply":"""السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ \nssalamualaikum wa rahmatullahi wa barakatuh.\n\nArtinya  “Salam damai untukmu dan semoga Rahmat serta Keberkahan Allah menyertaimu”. """}
+	if strd[0]and strd[1]=="jawab" and strd[2]=="salam":
+
+		reply={"reply":"""Kemudian bagi yang mendengarnya wajib menjawab dengan ucapan.\n\nوَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ\n\nWa ‘alaikum salam wa rahmatullahi wabarakatuh.\n\nArtinya: “Dan semoga keselamatan dan rahmat Allah serta keberhanNya terlimpah juga kepada kalian”"."""}
+
+	if strd[0]and strd[1]=="ketawa":
+
+		reply={"reply":"aowkkwokwokwo"}
+	
+	if reply=None:
 		
-		if not reply:
-			reply={"g" :"a"} 
+		reply={"g" :"a"} 
 
 	return jsonify(reply)
 
