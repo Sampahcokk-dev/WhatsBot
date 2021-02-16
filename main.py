@@ -422,7 +422,7 @@ def main():
 			for i in range (int(strd[3])):
 
 				jadi=web[i].findChildren()
-				surah.append("ayat"+str(i)":"+jadi[0]+"\nbacaan :"+jadi[1]+"\narti :"+jadi[2])
+				surah.append("ayat"+str(i)+":"+jadi[0]+"\nbacaan :"+jadi[1]+"\narti :"+jadi[2])
 
 			reply={"reply":surah}
 		except as s:
