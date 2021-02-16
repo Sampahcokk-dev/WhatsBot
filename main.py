@@ -425,8 +425,8 @@ def main():
 				surah.append("ayat"+str(i)+":"+jadi[0]+"\nbacaan :"+jadi[1]+"\narti :"+jadi[2])
 
 			reply={"reply":surah}
-		except as s:
-			reply={"reply":str(s)}
+		except :
+			reply={"reply":"error gaada cok"}
 
 	if reply==None:
 
