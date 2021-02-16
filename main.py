@@ -424,7 +424,8 @@ def main():
 			jadi=web[i].findChildren()
 			surah.append("ayat"+str(i)+":"+jadi[0].text+"\nbacaan :"+jadi[1].text+"\narti :"+jadi[2].text)
 
-		reply={"reply":surah}
+		surahJadi=surah[0:999999]
+		reply={"reply":surahJadi}
 		
 
 	if reply==None:
