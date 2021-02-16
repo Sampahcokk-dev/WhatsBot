@@ -58,9 +58,9 @@ def main():
 			
 			jadi =' '.join(strd)
 
-			waktu=str(dt.datetime.now()
+			waktu=str(dt.datetime.now())
 
-			jadi="tlakir di update : "+waktu+"\n\n"+jadi
+			jadi=("tlakir di update : "+waktu+"\n\n"+jadi)
 			
 			jsonFile=open("dataJson.json")
 			data=json.load(jsonFile)
