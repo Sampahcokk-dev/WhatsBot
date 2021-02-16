@@ -417,7 +417,7 @@ def main():
 
 			jadi=web[0].findChildren()
 
-			for i in range int(strd[3]):
+			for i in range (int(strd[3])):
 				surah="ayat 1:"+jadi[i]+"\nbacaan :"+jadi[i]+"\narti :"+jadi[i]
 
 			reply={"reply":surah}
