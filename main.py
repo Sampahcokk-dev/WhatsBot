@@ -395,19 +395,37 @@ def main():
 
 		reply={"reply":jadi[intny]}
 
-	if strd[0]and strd[1]=="salam" :
+	if strd[0]==prefix and strd[1]=="salam" :
 
 		reply={"reply":"""السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ \nssalamualaikum wa rahmatullahi wa barakatuh.\n\nArtinya  “Salam damai untukmu dan semoga Rahmat serta Keberkahan Allah menyertaimu”. """}
-	if strd[0]and strd[1]=="jawab" and strd[2]=="salam":
+	if strd[0]==prefix and strd[1]=="jawab" and strd[2]=="salam":
 
 		reply={"reply":"""Kemudian bagi yang mendengarnya wajib menjawab dengan ucapan.\n\nوَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ\n\nWa ‘alaikum salam wa rahmatullahi wabarakatuh.\n\nArtinya: “Dan semoga keselamatan dan rahmat Allah serta keberhanNya terlimpah juga kepada kalian”"."""}
 
-	if strd[0]and strd[1]=="ketawa":
+	if strd[0]==prefix and strd[1]=="ketawa":
 
 		reply={"reply":"aowkkwokwokwo"}
+
+	if strd[0]==prefix and strd[1]=="surah":
+
+		try :
+			a=rq.get("https://litequran.net/"+strd[2])
+
+			soup=BeautifulSoup(a.text,"html.parser")
+
+			web=soup.findAll("li")
+
+			jadi=web[0].findChildren()
+
+			for i in range int(strd[3]):
+				surah="ayat 1:"+jadi[i]+"\nbacaan :"+jadi[i]+"\narti :"+jadi[i]
+
+			reply={"reply":surah}
+		except:
+			reply={"reply":"*ERROR* lu salah tulis surah kekny"}
 	
 	if reply=None:
-		
+
 		reply={"g" :"a"} 
 
 	return jsonify(reply)
