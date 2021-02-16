@@ -422,7 +422,7 @@ def main():
 		for i in range (int(strd[3])):
 
 			jadi=web[i].findChildren()
-			surah.append("ayat"+str(i)+":"+jadi[0].text+"\nbacaan :"+jadi[1].text+"\narti :"+jadi[2].text)
+			surah.append("ayat"+str(i)+":\n"+jadi[0].text+"\nbacaan :\n"+jadi[1].text+"\narti :\n"+jadi[2].text+"\n\n")
 
 		surahJadi=''.join(surah)
 		reply={"reply":surahJadi}
