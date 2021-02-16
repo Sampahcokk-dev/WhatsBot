@@ -6,4 +6,7 @@ a=rq.get("https://litequran.net/al-ikhlas")
 soup=BeautifulSoup(a.text,"html.parser")
 
 web=soup.findAll("li")
-print(web[0])
+
+jadi=web[0].findChildren()
+
+print("ayat :\n"+jadi[0]+"\nbacaan :\n"+jadi[1]+"\narti :\n"+jadi[2])
