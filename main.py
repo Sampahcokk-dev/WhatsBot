@@ -424,7 +424,7 @@ def main():
 		except:
 			reply={"reply":"*ERROR* lu salah tulis surah kekny"}
 	
-	if reply=None:
+	if reply==None:
 
 		reply={"g" :"a"} 
 
