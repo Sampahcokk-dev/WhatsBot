@@ -11,6 +11,8 @@ kopid=Covid(source="worldometers")
 
 translet=google_translator()
 
+
+
 app=Flask(__name__)
 @app.route('/',methods=['POST'])
 
@@ -411,19 +413,21 @@ def main():
 		try :
 			a=rq.get("https://litequran.net/"+strd[2])
 
+			surah=[]
+
 			soup=BeautifulSoup(a.text,"html.parser")
 
 			web=soup.findAll("li")
 
-			jadi=web[0].findChildren()
-
 			for i in range (int(strd[3])):
-				surah="ayat 1:"+jadi[i]+"\nbacaan :"+jadi[i]+"\narti :"+jadi[i]
+
+				jadi=web[i].findChildren()
+				surah.append("ayat"+str(i)":"+jadi[0]+"\nbacaan :"+jadi[1]+"\narti :"+jadi[2])
 
 			reply={"reply":surah}
-		except:
-			reply={"reply":"*ERROR* lu salah tulis surah kekny"}
-	
+		except as s:
+			reply={"reply":str(s)}
+
 	if reply==None:
 
 		reply={"g" :"a"} 
