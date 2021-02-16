@@ -410,23 +410,22 @@ def main():
 
 	if strd[0]==prefix and strd[1]=="surah":
 
-		try :
-			a=rq.get("https://litequran.net/"+strd[2])
+		
+		a=rq.get("https://litequran.net/"+strd[2])
 
-			surah=[]
+		surah=[]
 
-			soup=BeautifulSoup(a.text,"html.parser")
+		soup=BeautifulSoup(a.text,"html.parser")
 
-			web=soup.findAll("li")
+		web=soup.findAll("li")
 
-			for i in range (int(strd[3])):
+		for i in range (int(strd[3])):
 
-				jadi=web[i].findChildren()
-				surah.append("ayat"+str(i)+":"+jadi[0]+"\nbacaan :"+jadi[1]+"\narti :"+jadi[2])
+			jadi=web[i].findChildren()
+			surah.append("ayat"+str(i)+":"+jadi[0]+"\nbacaan :"+jadi[1]+"\narti :"+jadi[2])
 
-			reply={"reply":surah}
-		except :
-			reply={"reply":"error gaada cok"}
+		reply={"reply":surah}
+		
 
 	if reply==None:
 
