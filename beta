@@ -9,4 +9,4 @@ web=soup.findAll("li")
 
 jadi=web[0].findChildren()
 
-print("ayat :\n"+jadi[0]+"\nbacaan :\n"+jadi[1]+"\narti :\n"+jadi[2])
+print("ayat :\n"+jadi[0].text+"\nbacaan :\n"+jadi[1].text+"\narti :\n"+jadi[2].text)
