@@ -395,7 +395,7 @@ def main():
 
 		intny=int(strd[2])
 
-		reply={"reply":jadi[intny]}
+		reply={"reply":jadi[intny].text}
 
 	if strd[0]==prefix and strd[1]=="salam" :
 
@@ -426,7 +426,6 @@ def main():
 		strd.pop(-1)
 
 		strj=''.join(strd)
-		print(strj)
 
 		a=rq.get("https://litequran.net/"+strj)
 
@@ -457,9 +456,19 @@ def main():
 
 		jadi=' '.join(strd)
 
-		f=fg(font='slant')
+		if strd[2]=="1":
 
-		reply={"reply":f.renderText(jadi)}
+
+
+			f=fg(font='slant')
+
+			reply={"reply":f.renderText(jadi)}
+
+		else:
+			f=fg()
+
+			reply={"reply":f.renderText(jadi)}
+
 
 
 
