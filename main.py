@@ -420,11 +420,13 @@ def main():
 
 		nj=strd[-1]
 
-		strd.pop(-1)
+		
 		strd.pop(1)
 		strd.pop(0)
+		strd.pop(-1)
 
 		strj=''.join(strd)
+		print(strj)
 
 		a=rq.get("https://litequran.net/"+strj)
 
