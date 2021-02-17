@@ -457,7 +457,7 @@ def main():
 
 		jadi=' '.join(strd)
 
-		f=Figlet(font='slant')
+		f=fg(font='slant')
 
 		reply={"reply":f.renderText(jadi)}
 
