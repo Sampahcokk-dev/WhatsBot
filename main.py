@@ -6,7 +6,7 @@ from googlesearch import search
 import random,wikipedia, time
 from covid import Covid
 import datetime as dt
- 
+
 kopid=Covid(source="worldometers") 
 
 translet=google_translator()
@@ -408,6 +408,14 @@ def main():
 
 		reply={"reply":"aowkkwokwokwo"}
 
+	if strd[0]==prefix and strd[1]=="nofap" and strd[2]=="days":
+
+		   
+		ngitunf = dt.date.today()-dt.date(2021,2,17)
+		
+
+		reply={"reply":"sudah "+str(ngitunf)+" hari \n\nsejak "+str(dt.date(2021,2,17)) }
+
 	if strd[0]==prefix and strd[1]=="surah":
 
 		nj=strd[-1]
@@ -438,6 +446,20 @@ def main():
 
 		reply={"reply":"beta"}
 		
+	if strd[0]==prefix and strd[1]=="art":
+
+		from pyfiglet import Figlet as fg
+
+		strd.pop(1)
+		strd.pop(0)
+
+		jadi=' '.join(strd)
+
+		f=Figlet(font='slant')
+
+		reply={"reply":f.renderText(jadi)}
+
+
 
 	if reply==None:
 
