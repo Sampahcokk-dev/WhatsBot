@@ -451,12 +451,14 @@ def main():
 
 		from pyfiglet import Figlet as fg
 
+		a=strd[2]
+
 		strd.pop(1)
 		strd.pop(0)
 
 		jadi=' '.join(strd)
 
-		if strd[2]=="1":
+		if a=="1":
 
 
 
