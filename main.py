@@ -381,7 +381,7 @@ def main():
 		bod=jh.findAll("tr",{"class":"lastrow"})
 
 		if bod: 
-			reply={"reply" :b+"\n\n"+str(ewq.status_code) +"\n\nAda Absen\n"+bod[1].text}
+			reply={"reply" :b+"\n\nhttps://elearning.smpypvdp.sch.id/mod/attendance/view.php?id=" +idPel+"\n\n"+str(ewq.status_code) +"\n"+bod[1].text}
 		else:
 			reply={"reply" :b+"\n\n"+str(ewq.status_code) +"\n\n"+bod[1].text}
 			
@@ -414,7 +414,7 @@ def main():
 		ngitunf = dt.date.today()-dt.date(2021,2,17)
 		
 
-		reply={"reply":"sudah "+str(ngitunf.days)+" hari \n\nsejak "+str(dt.date(2021,2,17)) }
+		reply={"reply":"sudah "+str(ngitunf.days)+" hari \n\nsejak "+str(dt.date(2021,1,17)) }
 
 	if strd[0]==prefix and strd[1]=="surah":
 
@@ -427,21 +427,26 @@ def main():
 
 		strj=''.join(strd)
 
-		a=rq.get("https://litequran.net/"+strj)
+		try:
 
-		surah=[]
+			a=rq.get("https://litequran.net/"+strj)
 
-		soup=BeautifulSoup(a.text,"html.parser")
+			surah=[]
 
-		web=soup.findAll("li")
+			soup=BeautifulSoup(a.text,"html.parser")
 
-		for i in range (int(nj)):
+			web=soup.findAll("li")
 
-			jadi=web[i].findChildren()
-			surah.append("ayat"+str(i)+":\n"+jadi[0].text+"\nbacaan :\n"+jadi[1].text+"\narti :\n"+jadi[2].text+"\n\n")
+			for i in range (int(nj)):
 
-		surahJadi=''.join(surah)
-		reply={"reply":surahJadi}
+				jadi=web[i].findChildren()
+				surah.append("ayat"+str(i)+":\n"+jadi[0].text+"\nbacaan :\n"+jadi[1].text+"\narti :\n"+jadi[2].text+"\n\n")
+
+			surahJadi=''.join(surah)
+			reply={"reply":surahJadi}
+		
+		except:
+			reply={"reply":"Subhanallah sepertinya anda salah ngetik surah"}
 
 	if strd[0]==prefix and strd[1]=="update":
 
@@ -453,6 +458,7 @@ def main():
 
 		a=strd[2]
 
+		strd.pop(2)
 		strd.pop(1)
 		strd.pop(0)
 
