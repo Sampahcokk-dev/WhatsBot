@@ -189,7 +189,7 @@ def main():
 		jadi =' '.join(strd)
         
         
-		for j in search(jadi, tld="co.in", num=10, stop=10, pause=1): 
+		for j in search(jadi, tld="co.in", num=10, stop=None, pause=1): 
 			a.append(j)
 
 		hasilS='\n\n'.join(a)
@@ -414,7 +414,7 @@ def main():
 		ngitunf = dt.date.today()-dt.date(2021,2,17)
 		
 
-		reply={"reply":"sudah "+str(ngitunf)+" hari \n\nsejak "+str(dt.date(2021,2,17)) }
+		reply={"reply":"sudah "+str(ngitunf.days)+" hari \n\nsejak "+str(dt.date(2021,2,17)) }
 
 	if strd[0]==prefix and strd[1]=="surah":
 
