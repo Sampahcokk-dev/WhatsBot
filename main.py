@@ -411,10 +411,10 @@ def main():
 	if strd[0]==prefix and strd[1]=="nofap" and strd[2]=="days":
 
 		   
-		ngitunf = dt.date.today()-dt.date(2021,1,17)
+		ngitunf = dt.date.today()-dt.date(2021,2,19)
 		
 
-		reply={"reply":"sudah "+str(ngitunf.days)+" hari \n\nsejak "+str(dt.date(2021,1,17)) }
+		reply={"reply":"sudah "+str(ngitunf.days)+" hari \n\nsejak "+str(dt.date(2021,2,19)) }
 
 	if strd[0]==prefix and strd[1]=="surah":
 
