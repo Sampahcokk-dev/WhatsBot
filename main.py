@@ -419,7 +419,7 @@ def main():
 	if strd[0]==prefix and strd[1]=="surah":
 
 
-		if strd[3] not "dari":
+		if strd[3] is not "dari":
 			nj=strd[-1]
 
 			
