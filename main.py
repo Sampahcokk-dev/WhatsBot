@@ -419,7 +419,7 @@ def main():
 	if strd[0]==prefix and strd[1]=="surah":
 
 
-		if strd[3] is not "dari":
+		if strd[3] != "dari":
 			nj=strd[-1]
 
 			
@@ -449,7 +449,7 @@ def main():
 			
 			except:
 				reply={"reply":"Subhanallah sepertinya anda salah ngetik surah"}
-		if strd[3]=="dari":
+		elif strd[3]=="dari":
 
 			a=rq.get("https://litequran.net/"+strd[2])
 
