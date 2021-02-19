@@ -124,7 +124,7 @@ def main():
 		reply={"reply":"trasnlet jadi\n"+jadi}
 		
 	if strd[0]==prefix and strd[1]=="covid":
-		if strd[2]=="indo":
+		elif strd[2]=="indo":
 			
 	    
 			page =rq.get('https://covid19.go.id')
@@ -135,7 +135,7 @@ def main():
 	    
 			reply={"reply":div[1].text}
 		
-		if strd[2]=="bontang":
+		elif strd[2]=="bontang":
 			
 			a =rq.get("http://gugus-covid.bontangkota.go.id/?page_id=556")
 			soup=BeautifulSoup(a.text,'html.parser')
@@ -146,7 +146,7 @@ def main():
 			reply={"reply":jadi}
 			
 	    
-		if strd[2]=="total":
+		elif strd[2]=="total":
 			if strd[3]=="aktif":
 				
 				aktip=kopid.get_total_active_cases()
@@ -411,7 +411,7 @@ def main():
 	if strd[0]==prefix and strd[1]=="nofap" and strd[2]=="days":
 
 		   
-		ngitunf = dt.date.today()-dt.date(2021,2,17)
+		ngitunf = dt.date.today()-dt.date(2021,1,17)
 		
 
 		reply={"reply":"sudah "+str(ngitunf.days)+" hari \n\nsejak "+str(dt.date(2021,1,17)) }
