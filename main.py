@@ -418,18 +418,40 @@ def main():
 
 	if strd[0]==prefix and strd[1]=="surah":
 
-		nj=strd[-1]
 
-		
-		strd.pop(1)
-		strd.pop(0)
-		strd.pop(-1)
+		if strd[3] not "dari":
+			nj=strd[-1]
 
-		strj=''.join(strd)
+			
+			strd.pop(1)
+			strd.pop(0)
+			strd.pop(-1)
 
-		try:
+			strj=''.join(strd)
 
-			a=rq.get("https://litequran.net/"+strj)
+			try:
+
+				a=rq.get("https://litequran.net/"+strj)
+
+				surah=[]
+
+				soup=BeautifulSoup(a.text,"html.parser")
+
+				web=soup.findAll("li")
+
+				for i in range (int(nj)):
+
+					jadi=web[i].findChildren()
+					surah.append("ayat"+str(i)+":\n"+jadi[0].text+"\nbacaan :\n"+jadi[1].text+"\narti :\n"+jadi[2].text+"\n\n")
+
+				surahJadi=''.join(surah)
+				reply={"reply":surahJadi}
+			
+			except:
+				reply={"reply":"Subhanallah sepertinya anda salah ngetik surah"}
+		if strd[3]=="dari":
+
+			a=rq.get("https://litequran.net/"+strd[2])
 
 			surah=[]
 
@@ -437,43 +459,13 @@ def main():
 
 			web=soup.findAll("li")
 
-			for i in range (int(nj)):
+			for i in range (int(strd[4]),int(strd[6])):
 
 				jadi=web[i].findChildren()
 				surah.append("ayat"+str(i)+":\n"+jadi[0].text+"\nbacaan :\n"+jadi[1].text+"\narti :\n"+jadi[2].text+"\n\n")
 
 			surahJadi=''.join(surah)
 			reply={"reply":surahJadi}
-		
-		except:
-			reply={"reply":"Subhanallah sepertinya anda salah ngetik surah"}
-
-		
-	if strd[0]==prefix and strd[1]=="surah" and strd[3]=="dari" :
-
-		
-
-		
-
-		
-		a=rq.get("https://litequran.net/"+strd[2])
-
-		surah=[]
-
-		soup=BeautifulSoup(a.text,"html.parser")
-
-		web=soup.findAll("li")
-
-		for i in range (int(strd[4]),int(strd[6])):
-
-			jadi=web[i].findChildren()
-			surah.append("ayat"+str(i)+":\n"+jadi[0].text+"\nbacaan :\n"+jadi[1].text+"\narti :\n"+jadi[2].text+"\n\n")
-
-		surahJadi=''.join(surah)
-		reply={"reply":surahJadi}
-		
-
-
 
 	if strd[0]==prefix and strd[1]=="update":
 
