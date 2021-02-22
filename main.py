@@ -102,7 +102,7 @@ def main():
 	if message =="prefix":
 		
 		reply={"reply":"*PREFIXNYA ITU*"+data["k"][0]["prefix"]}
-		return jsonify(reply)
+		
 		
 	if strd[0]==prefix and strd[1]=="time":
 		
@@ -314,7 +314,7 @@ def main():
 				reply={"reply":"*GG* lu bener jawabanny adalah" +str(data["k"] [0]["tebak"]) }
 			else:
 				reply={"reply" :"*BLOK* salah"} 
-		if strd [2]=="tebak":
+		elif strd [2]=="tebak":
 			
 			hasilRan=random.randrange(int(strd[3]),int(strd[5]))
 			
@@ -327,7 +327,21 @@ def main():
 			aFile.close()
 			
 			reply={"reply" :"dah coba tebak"} 
-			
+
+		elif strd[2]=="suit":
+
+			menang=None
+			listny=["gajah","semut","orang"]
+		
+			komputer=random.choice(listny)
+			if komputer==strd[3]:
+				reply={"reply":"yah seri"}
+			elif komputer=="gajah" and strd[3]=="semut" or komputer=="orang" and strd[3]=="gajah" or komputer=="semut" and strd[3]=="orang":
+				reply={"reply":"*GG COK* kamu menang\n\nkomputerny pilih "+komputer}
+			elif komputer=="semut" and strd[3]=="gajah" or komputer=="gajah" and strd[3]=="orang" or komputer=="orang" and strd[3]=="semut":
+				{"reply":"*BLOK* kamu kalah\n\nkomputerny pilih "+komputer}
+
+
 	if strd[0]==prefix and strd[1]=="ada"and strd[2]=="absen":
 		if strd[3]=="ips":
 			idPel="1640"
@@ -411,10 +425,10 @@ def main():
 	if strd[0]==prefix and strd[1]=="nofap" and strd[2]=="days":
 
 		   
-		ngitunf = dt.date.today()-dt.date(2021,1,17)
+		ngitunf = dt.date.today()-dt.date(2021,2,19)
 		
 
-		reply={"reply":"sudah "+str(ngitunf.days)+" hari \n\nsejak "+str(dt.date(2021,1,17)) }
+		reply={"reply":"sudah "+str(ngitunf.days)+" hari \n\nsejak "+str(dt.date(2021,2,19)) }
 
 	if strd[0]==prefix and strd[1]=="surah":
 
