@@ -124,7 +124,7 @@ def main():
 		reply={"reply":"trasnlet jadi\n"+jadi}
 		
 	if strd[0]==prefix and strd[1]=="covid":
-		elif strd[2]=="indo":
+		if strd[2]=="indo":
 			
 	    
 			page =rq.get('https://covid19.go.id')
