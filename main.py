@@ -490,7 +490,19 @@ def main():
 		reply={"reply":"beta"}
 
 	if strd[0]==prefix and strd[1]=="cuaca":
-		print("tolol")
+		a =rq.get("https://www.bmkg.go.id/cuaca/prakiraan-cuaca.bmkg?Kota=Bontang&AreaID=501350&Prov=16")
+		soup=BeautifulSoup(a.text,'html.parser')
+
+		div=soup.find('div',{'id':'TabPaneCuaca1'})
+
+		#print(div.text)
+		import re
+		bla=div.text.replace("\n"," ")
+		jadi=re.split(" \n",bla)
+		#jadi=div.text.replace("\n"," ")
+		#jadi.split(" ")
+
+		reply={"reply":jadi[0]}
 
 		
 	if strd[0]==prefix and strd[1]=="art":
