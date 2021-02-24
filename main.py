@@ -501,18 +501,18 @@ def main():
 			a =rq.get("https://www.bmkg.go.id/cuaca/prakiraan-cuaca.bmkg?Kota=Bontang&AreaID=501350&Prov=16#TabPaneCuaca"+skrg)
 			soup=BeautifulSoup(a.text,'html.parser')
 
-			waktu=soup.find('li',{'class':'active'})
+			waktu=soup.find('a',{'href':'#TabPaneCuaca'+skrg})
 
 			div=soup.find('div',{'id':'TabPaneCuaca'+skrg})
 
 				#print(div.text)
-			import re
-			bla=div.text.replace("\n"," ")
-			jadi=re.split(" \n",bla)
+			#import re
+			#bla=div.text.replace("\n"," ")
+			#jadi=re.split(" \n",bla)
 				#jadi=div.text.replace("\n"," ")
 				#jadi.split(" ")
 
-			reply={"reply":waktu.text+"\n"+jadi[0]}
+			reply={"reply":waktu.text+div.text}
 
 
 
