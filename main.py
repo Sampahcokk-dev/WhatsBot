@@ -512,7 +512,7 @@ def main():
 				#jadi=div.text.replace("\n"," ")
 				#jadi.split(" ")
 
-			reply={"reply":waktu.text+div.text}
+			reply={"reply":waktu.text+bla}
 
 
 
