@@ -312,6 +312,10 @@ def main():
 			
 			if data["k"] [0]["tebak"]==jawab:
 				reply={"reply":"*GG* lu bener jawabanny adalah" +str(data["k"] [0]["tebak"]) }
+			elif data["k"] [0]["tebak"]>jawab:
+				reply={"reply":"*BLOK* lu kurang gede jawabanny"  }
+			elif data["k"] [0]["tebak"]<jawab:
+				reply={"reply":"*BLOK* lu kelebihan jawabanny"  }
 			else:
 				reply={"reply" :"*BLOK* salah"} 
 		elif strd [2]=="tebak":
@@ -484,6 +488,10 @@ def main():
 	if strd[0]==prefix and strd[1]=="update":
 
 		reply={"reply":"beta"}
+
+	if strd[0]==prefix and strd[1]=="cuaca":
+
+
 		
 	if strd[0]==prefix and strd[1]=="art":
 
