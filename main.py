@@ -507,7 +507,7 @@ def main():
 
 				#print(div.text)
 			#import re
-			#bla=div.text.replace("\n"," ")
+			bla=div.text.replace("\n","")
 			#jadi=re.split(" \n",bla)
 				#jadi=div.text.replace("\n"," ")
 				#jadi.split(" ")
