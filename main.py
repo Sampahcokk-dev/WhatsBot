@@ -490,7 +490,7 @@ def main():
 		reply={"reply":"beta"}
 
 	if strd[0]==prefix and strd[1]=="cuaca":
-
+		print("tolol")
 
 		
 	if strd[0]==prefix and strd[1]=="art":
