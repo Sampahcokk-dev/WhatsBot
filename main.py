@@ -5,7 +5,7 @@ import requests as rq
 from googlesearch import search
 import random,wikipedia, time
 from covid import Covid
-import datetime as dt
+from datetime as dt
 
 kopid=Covid(source="worldometers") 
 
@@ -42,7 +42,7 @@ def main():
 		
 		jadi =' '.join(strd)
 		
-		waktu=str(dt.datetime.now())
+		waktu=str(dt.datetime.today().strftime('%Y-%m-%d'))
 
 		jadi=("tlakir di update : "+waktu+"\n\n"+jadi)
 
@@ -490,19 +490,31 @@ def main():
 		reply={"reply":"beta"}
 
 	if strd[0]==prefix and strd[1]=="cuaca":
-		a =rq.get("https://www.bmkg.go.id/cuaca/prakiraan-cuaca.bmkg?Kota=Bontang&AreaID=501350&Prov=16")
-		soup=BeautifulSoup(a.text,'html.parser')
+		skrg=None
+		if strd[2]=="sekarang":
+			skrg="1"
+		elif strd[2]=="besok":
+			skrg="2"
+		elif strd[2]=="lusa":
+			skrg="3"
+		if skrg!=None:
+			a =rq.get("https://www.bmkg.go.id/cuaca/prakiraan-cuaca.bmkg?Kota=Bontang&AreaID=501350&Prov=16#TabPaneCuaca"+skrg)
+			soup=BeautifulSoup(a.text,'html.parser')
 
-		div=soup.find('div',{'id':'TabPaneCuaca1'})
+			waktu=soup.find('li',{'class':'active'})
 
-		#print(div.text)
-		import re
-		bla=div.text.replace("\n"," ")
-		jadi=re.split(" \n",bla)
-		#jadi=div.text.replace("\n"," ")
-		#jadi.split(" ")
+			div=soup.find('div',{'id':'TabPaneCuaca'+skrg})
 
-		reply={"reply":jadi[0]}
+				#print(div.text)
+			import re
+			bla=div.text.replace("\n"," ")
+			jadi=re.split(" \n",bla)
+				#jadi=div.text.replace("\n"," ")
+				#jadi.split(" ")
+
+			reply={"reply":waktu.text+"\n"+jadi[0]}
+
+
 
 		
 	if strd[0]==prefix and strd[1]=="art":
