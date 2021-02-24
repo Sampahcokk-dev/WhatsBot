@@ -5,7 +5,7 @@ import requests as rq
 from googlesearch import search
 import random,wikipedia, time
 from covid import Covid
-from datetime as dt
+import datetime as dt
 
 kopid=Covid(source="worldometers") 
 
