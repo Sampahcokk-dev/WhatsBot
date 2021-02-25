@@ -310,7 +310,20 @@ def main():
 			jsonFile=open("dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["nama1"]=strd[4]
+			aFile=open("dataJson.json","w")
+			json.dump(data,aFile)
+			aFile.close()
 
+			jsonFile=open("dataJson.json")
+			data=json.load(jsonFile)
+			data["k"][0]["giliran"]="1"
+			aFile=open("dataJson.json","w")
+			json.dump(data,aFile)
+			aFile.close()
+
+			jsonFile=open("dataJson.json")
+			data=json.load(jsonFile)
+			data["k"][0]["1"]="(1)"
 			aFile=open("dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
@@ -318,14 +331,69 @@ def main():
 			jsonFile=open("dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["nama2"]=strd[5]
+			aFile=open("dataJson.json","w")
+			json.dump(data,aFile)
+			aFile.close()
 
+			jsonFile=open("dataJson.json")
+			data=json.load(jsonFile)
+			data["k"][0]["1"]="(1)"
+			aFile=open("dataJson.json","w")
+			json.dump(data,aFile)
+			aFile.close()
+
+			jsonFile=open("dataJson.json")
+			data=json.load(jsonFile)
+			data["k"][0]["2"]="(2)"
+			aFile=open("dataJson.json","w")
+			json.dump(data,aFile)
+			aFile.close()
+
+			jsonFile=open("dataJson.json")
+			data=json.load(jsonFile)
+			data["k"][0]["3"]="(3)"
+			aFile=open("dataJson.json","w")
+			json.dump(data,aFile)
+			aFile.close()
+
+			jsonFile=open("dataJson.json")
+			data=json.load(jsonFile)
+			data["k"][0]["4"]="(4)"
+			aFile=open("dataJson.json","w")
+			json.dump(data,aFile)
+			aFile.close()
+
+			jsonFile=open("dataJson.json")
+			data=json.load(jsonFile)
+			data["k"][0]["5"]="(5)"
+			aFile=open("dataJson.json","w")
+			json.dump(data,aFile)
+			aFile.close()
+
+			jsonFile=open("dataJson.json")
+			data=json.load(jsonFile)
+			data["k"][0]["6"]="(6)"
+			aFile=open("dataJson.json","w")
+			json.dump(data,aFile)
+			aFile.close()
+
+			jsonFile=open("dataJson.json")
+			data=json.load(jsonFile)
+			data["k"][0]["7"]="(7)"
+			aFile=open("dataJson.json","w")
+			json.dump(data,aFile)
+			aFile.close()
+
+			jsonFile=open("dataJson.json")
+			data=json.load(jsonFile)
+			data["k"][0]["9"]="(9)"
 			aFile=open("dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
 			reply={"reply":"dah mulai "+strd[4]+" duluan"}
 
-		elif strd[3]=="tictactoe" and strd[4]=="liat":
+		elif strd[2]=="tictactoe" and strd[3]=="liat":
 			reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
 		elif strd[2]=="tictactoe" :
 			if data["k"][0]["giliran"]=="1":
