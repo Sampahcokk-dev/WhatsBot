@@ -305,7 +305,7 @@ def main():
 		reply={"reply" :"test"} 
 	
 	if strd[0]==prefix and strd[1]=="game":
-		if strd[2]=="tictaoe" and strd[3]=="mulai":
+		if strd[2]=="tictactoe" and strd[3]=="mulai":
 
 			jsonFile=open("dataJson.json")
 			data=json.load(jsonFile)
@@ -325,6 +325,8 @@ def main():
 
 			reply={"reply":"dah mulai "+strd[4]+" duluan"}
 
+		elif strd[3]=="tictactoe" and strd[4]=="liat":
+			reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
 		elif strd[2]=="tictactoe" :
 			if data["k"][0]["giliran"]=="1":
 				if strd[3]==data["k"][0]["nama1"]:
@@ -348,7 +350,11 @@ def main():
 					json.dump(data,aFile)
 					aFile.close()
 
-					reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
+					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"] or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"] or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"] or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"] or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]:
+						reply={"reply":"selamat kamu menang"}
+					else:
+						reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
+
 
 			elif data["k"][0]["giliran"]=="2":
 				if strd[3]==data["k"][0]["nama2"]:
@@ -358,7 +364,7 @@ def main():
 
 					jsonFile=open("dataJson.json")
 					data=json.load(jsonFile)
-					data["k"][0][strd[4]]="x"
+					data["k"][0][strd[4]]="o"
 
 					aFile=open("dataJson.json","w")
 					json.dump(data,aFile)
@@ -372,9 +378,11 @@ def main():
 					json.dump(data,aFile)
 					aFile.close()
 
-					reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
-				elif strd[3]=="liat":
-					reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
+					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"] or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"] or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"] or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"] or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]:
+						reply={"reply":"selamat kamu menang"}
+					else:
+						reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
+
 
 
 
