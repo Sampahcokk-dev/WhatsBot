@@ -305,6 +305,7 @@ def main():
 		reply={"reply" :"test"} 
 	
 	if strd[0]==prefix and strd[1]=="game":
+
 		if strd[2]=="tictactoe" and strd[3]=="mulai":
 
 			jsonFile=open("dataJson.json")
@@ -429,7 +430,7 @@ def main():
 					json.dump(data,aFile)
 					aFile.close()
 
-					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"] or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"] or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"] or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"] or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]:
+					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"] or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"] or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"] or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"] or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"] or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"] or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]:
 						if data["k"][0]["1"]=="o":
 							reply={"reply":"jir "+data["k"][0]["nama2"]+" menang"}
 						elif data["k"][0]["1"]=="x":
@@ -460,7 +461,7 @@ def main():
 					json.dump(data,aFile)
 					aFile.close()
 
-					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"] or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"] or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"] or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"] or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]:
+					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"] or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"] or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"] or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"] or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"] or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"] or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]:
 						if data["k"][0]["1"]=="o":
 							reply={"reply":"jir "+data["k"][0]["nama2"]+" menang"}
 						elif data["k"][0]["1"]=="x":
