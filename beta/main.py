@@ -682,7 +682,7 @@ def main():
 			
 		
 			
-			linkjadi=cmnd[:7]+"ss"+cmnd[7:]
+			linkjadi=cmnd[:8]+"ss"+cmnd[8:]
 
 			a=liatlink(linkjadi)
 
