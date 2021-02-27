@@ -682,7 +682,7 @@ def main():
 			
 		
 			
-			linkjadi=cmnd[:11]+"ss"+cmnd[11:]
+			linkjadi=cmnd[:7]+"ss"+cmnd[7:]
 
 			a=liatlink(linkjadi)
 
@@ -692,7 +692,7 @@ def main():
 
 			linkjadi="https://sfrom.net/"+cmnd
 
-			reply={"reply":"sip jadi\nlink untuk donlot\n\n"+linklink(linkjadi )}
+			reply={"reply":"sip jadi\nlink untuk donlot\n\n"+liatlink(linkjadi )}
 		
 
 		
