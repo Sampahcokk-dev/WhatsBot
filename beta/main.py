@@ -431,7 +431,7 @@ def main():
 
 					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="❌" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="❌" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="❌" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="❌" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="❌" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌":
 						reply={"reply":"jir "+data["k"][0]["nama1"]+" menang"}
-					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="⭕" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="⭕" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="⭕" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕":
+					elif data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="⭕" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="⭕" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="⭕" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕":
 						reply={"reply":"jir "+data["k"][0]["nama2"]+" menang"}
 					else:
 						reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
@@ -445,7 +445,7 @@ def main():
 
 					jsonFile=open("dataJson.json")
 					data=json.load(jsonFile)
-					data["k"][0][strd[4]]="o"
+					data["k"][0][strd[4]]="⭕"
 
 					aFile=open("dataJson.json","w")
 					json.dump(data,aFile)
@@ -461,7 +461,7 @@ def main():
 
 					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="❌" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="❌" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="❌" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="❌" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="❌" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌":
 						reply={"reply":"jir "+data["k"][0]["nama1"]+" menang"}
-					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="⭕" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="⭕" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="⭕" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕":
+					elif data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="⭕" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="⭕" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="⭕" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕":
 						reply={"reply":"jir "+data["k"][0]["nama2"]+" menang"}
 					else:
 						reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
@@ -679,23 +679,10 @@ def main():
 
 	if strd[0]==prefix and strd[1]=="donlot":
 		cmnd=strd[3]
-		if strd[2]=="ytb":
-			
-		
-			
-			linkjadi=cmnd[:8]+"ss"+cmnd[8:]
+		linkjadi="https://sfrom.net/"+cmnd
 
-			a=liatlink(linkjadi)
-			print(a)
-
-			reply={"reply":"yoi\nlink untuk donlotny\n\n" + a}
-		
-		elif strd[2]=="insta":
-
-			linkjadi="https://sfrom.net/"+cmnd
-
-			reply={"reply":"sip jadi\nlink untuk donlot\n\n"+liatlink(linkjadi )}
-		
+		reply={"reply":"sip jadi\nlink untuk donlot\n\n"+liatlink(linkjadi )}
+	
 
 		
 
