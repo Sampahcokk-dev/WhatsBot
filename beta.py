@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import re
-
+a=[]
 param = {"q": "coffee"}
 headers = {
     "User-Agent":
@@ -16,7 +16,7 @@ soup.prettify()
 title = soup.select(".DKV0Md span")
 
 for t in title:
-    print(f"Title: {t.get_text()}\n")
+    a.append(f"Title: {t.get_text()}\n")
 
 snippets = soup.select(".aCOpRe span:not(.f)")
 
@@ -27,3 +27,5 @@ link = soup.findAll("a")
 
 for link in soup.find_all("a", href=re.compile("(?<=/url\?q=)(htt.*://.*)")):
     print(re.split(":(?=http)", link["href"].replace("/url?q=", "")))
+
+print(a)

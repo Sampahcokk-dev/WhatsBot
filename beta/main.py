@@ -683,7 +683,21 @@ def main():
 
 		reply={"reply":"sip jadi\nlink untuk donlot\n\n"+liatlink(linkjadi )}
 	
+	if strd[0]==prefix and strd[1]=="hitung":
 
+		if strd[3]=="+":
+			hasil=int(strd[2]) + int(strd[4])
+			reply={"reply":"*HASIL*\n\n"+hasil}
+		if strd[3]=="-":
+			hasil=int(strd[2]) - int(strd[4])
+			reply={"reply":"*HASIL*\n\n"+hasil}
+		if strd[3]=="x"or strd[3]=="*":
+			hasil=int(strd[2]) * int(strd[4])
+			reply={"reply":"*HASIL*\n\n"+hasil}
+		
+
+			
+			
 		
 
 
