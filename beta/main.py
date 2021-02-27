@@ -430,7 +430,7 @@ def main():
 
 					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="❌" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="❌" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="❌" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="❌" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="❌" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌":
 						reply={"reply":"jir "+data["k"][0]["nama1"]+" menang"}
-					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="⭕" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="⭕" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="⭕" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕"
+					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="⭕" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="⭕" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="⭕" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕":
 						reply={"reply":"jir "+data["k"][0]["nama2"]+" menang"}
 					else:
 						reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
@@ -460,7 +460,7 @@ def main():
 
 					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="❌" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="❌" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="❌" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="❌" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="❌" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌":
 						reply={"reply":"jir "+data["k"][0]["nama1"]+" menang"}
-					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="⭕" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="⭕" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="⭕" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕"
+					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="⭕" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="⭕" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="⭕" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕":
 						reply={"reply":"jir "+data["k"][0]["nama2"]+" menang"}
 					else:
 						reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
@@ -692,7 +692,7 @@ def main():
 
 			linkjadi="https://sfrom.net/"+cmnd
 
-			reply={"reply":"sip jadi\nlink untuk donlot\n\n"+linklink(linkjadi)}
+			reply={"reply":"sip jadi\nlink untuk donlot\n\n"+linklink(linkjadi )}
 		
 
 		
