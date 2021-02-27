@@ -675,7 +675,7 @@ def main():
 				#jadi=div.text.replace("\n"," ")
 				#jadi.split(" ")
 
-			reply={"reply":waktu.text+"\n\n"bla}
+			reply={"reply":waktu.text+"\n\n"+bla}
 
 	if strd[0]==prefix and strd[1]=="donlot":
 		cmnd=strd[3]
