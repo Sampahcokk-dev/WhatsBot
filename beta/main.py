@@ -12,6 +12,9 @@ kopid=Covid(source="worldometers")
 translet=google_translator()
 
 
+def liatlink(linkny):
+	r =rq.get(linkny)
+	return r.url
 
 app=Flask(__name__)
 @app.route('/',methods=['POST'])
@@ -322,12 +325,7 @@ def main():
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
-			data=json.load(jsonFile)
-			data["k"][0]["1"]="(1)"
-			aFile=open("dataJson.json","w")
-			json.dump(data,aFile)
-			aFile.close()
+			
 
 			jsonFile=open("dataJson.json")
 			data=json.load(jsonFile)
@@ -338,63 +336,63 @@ def main():
 
 			jsonFile=open("dataJson.json")
 			data=json.load(jsonFile)
-			data["k"][0]["1"]="(1)"
+			data["k"][0]["1"]="1️⃣"
 			aFile=open("dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
 			jsonFile=open("dataJson.json")
 			data=json.load(jsonFile)
-			data["k"][0]["2"]="(2)"
+			data["k"][0]["2"]="2️⃣"
 			aFile=open("dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
 			jsonFile=open("dataJson.json")
 			data=json.load(jsonFile)
-			data["k"][0]["3"]="(3)"
+			data["k"][0]["3"]="3️⃣"
 			aFile=open("dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
 			jsonFile=open("dataJson.json")
 			data=json.load(jsonFile)
-			data["k"][0]["4"]="(4)"
+			data["k"][0]["4"]="4️⃣"
 			aFile=open("dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
 			jsonFile=open("dataJson.json")
 			data=json.load(jsonFile)
-			data["k"][0]["5"]="(5)"
+			data["k"][0]["5"]="5️⃣"
 			aFile=open("dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
 			jsonFile=open("dataJson.json")
 			data=json.load(jsonFile)
-			data["k"][0]["6"]="(6)"
+			data["k"][0]["6"]="6️⃣"
 			aFile=open("dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
 			jsonFile=open("dataJson.json")
 			data=json.load(jsonFile)
-			data["k"][0]["7"]="(7)"
+			data["k"][0]["7"]="7️⃣"
 			aFile=open("dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
 			jsonFile=open("dataJson.json")
 			data=json.load(jsonFile)
-			data["k"][0]["8"]="(8)"
+			data["k"][0]["8"]="8️⃣"
 			aFile=open("dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
 			jsonFile=open("dataJson.json")
 			data=json.load(jsonFile)
-			data["k"][0]["9"]="(9)"
+			data["k"][0]["9"]="9️⃣"
 			aFile=open("dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
@@ -416,7 +414,7 @@ def main():
 
 					jsonFile=open("dataJson.json")
 					data=json.load(jsonFile)
-					data["k"][0][strd[4]]="x"
+					data["k"][0][strd[4]]="❌"
 
 					aFile=open("dataJson.json","w")
 					json.dump(data,aFile)
@@ -430,11 +428,10 @@ def main():
 					json.dump(data,aFile)
 					aFile.close()
 
-					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"] or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"] or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"] or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"] or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"] or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"] or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]:
-						if data["k"][0]["1"]=="o":
-							reply={"reply":"jir "+data["k"][0]["nama2"]+" menang"}
-						elif data["k"][0]["1"]=="x":
-							reply={"reply":"jir "+data["k"][0]["nama1"]+" menang"}
+					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="❌" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="❌" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="❌" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="❌" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="❌" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌":
+						reply={"reply":"jir "+data["k"][0]["nama1"]+" menang"}
+					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="⭕" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="⭕" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="⭕" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕"
+						reply={"reply":"jir "+data["k"][0]["nama2"]+" menang"}
 					else:
 						reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
 
@@ -461,11 +458,10 @@ def main():
 					json.dump(data,aFile)
 					aFile.close()
 
-					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"] or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"] or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"] or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"] or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"] or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"] or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]:
-						if data["k"][0]["1"]=="o":
-							reply={"reply":"jir "+data["k"][0]["nama2"]+" menang"}
-						elif data["k"][0]["1"]=="x":
-							reply={"reply":"jir "+data["k"][0]["nama1"]+" menang"}
+					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="❌" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="❌" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="❌" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="❌" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="❌" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌":
+						reply={"reply":"jir "+data["k"][0]["nama1"]+" menang"}
+					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="⭕" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="⭕" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="⭕" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕"
+						reply={"reply":"jir "+data["k"][0]["nama2"]+" menang"}
 					else:
 						reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
 
@@ -680,9 +676,28 @@ def main():
 
 			reply={"reply":waktu.text+bla}
 
+	if strd[0]==prefix and strd[1]=="donlot":
+		cmnd=strd[3]
+		if strd[2]=="ytb":
+			
+		
+			
+			linkjadi=cmnd[:11]+"ss"+cmnd[11:]
 
+			a=liatlink(linkjadi)
+
+			reply={"reply":"yoi\nlink untuk donlotny\n\n" + a}
+		
+		elif strd[2]=="insta":
+
+			linkjadi="https://sfrom.net/"+cmnd
+
+			reply={"reply":"sip jadi\nlink untuk donlot\n\n"+linklink(linkjadi)}
+		
 
 		
+
+
 	if strd[0]==prefix and strd[1]=="art":
 
 		from pyfiglet import Figlet as fg
