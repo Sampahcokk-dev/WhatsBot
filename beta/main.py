@@ -14,7 +14,8 @@ translet=google_translator()
 
 def liatlink(linkny):
 	r =rq.get(linkny)
-	return r.url
+	a=r.url
+	return a
 
 app=Flask(__name__)
 @app.route('/',methods=['POST'])
@@ -685,6 +686,7 @@ def main():
 			linkjadi=cmnd[:8]+"ss"+cmnd[8:]
 
 			a=liatlink(linkjadi)
+			print(a)
 
 			reply={"reply":"yoi\nlink untuk donlotny\n\n" + a}
 		
