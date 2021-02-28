@@ -25,4 +25,12 @@ jh =BeautifulSoup(s.get("https://elearning.smpypvdp.sch.id/my/#").text,"html.par
 
 bod=jh.find("section",{"id":"inst14352"})
 
-print(bod.text)
+data=bod.text.split("\n")
+
+while '' in data:
+	data.remove('')
+
+data="\n\n".join(data)
+
+print(data)
+ 
