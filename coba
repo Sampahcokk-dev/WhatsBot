@@ -14,7 +14,7 @@ b=a.get("value")
 
 
 
-login={"username":"6531","password":"2252006","logintoken":b,"anchor":""}
+login={"username":"tauguag","password":"Passnyagampangcuma123","logintoken":b,"anchor":""}
 
 ewq=s.post("https://elearning.smpypvdp.sch.id/login/index.php",login)
 
@@ -23,7 +23,6 @@ ewq=s.post("https://elearning.smpypvdp.sch.id/login/index.php",login)
 
 jh =BeautifulSoup(s.get("https://elearning.smpypvdp.sch.id/my/#").text,"html.parser")
 
-bod=jh.find("div",{"class":"card-body p-3"})
+bod=jh.find("section",{"id":"inst14352"})
 
 print(bod.text)
-

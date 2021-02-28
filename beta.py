@@ -1,13 +1,11 @@
 from bs4 import BeautifulSoup
 import requests
 import re
-<<<<<<< HEAD
 
-param = {"q": "bontang"} 
-=======
+param = {"q": "smp ypvdp"} 
+
 a=[]
-param = {"q": "coffee"}
->>>>>>> 78bc926d3ff0711237a2468ae77c014c2dec24b3
+
 headers = {
     "User-Agent":
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15"
@@ -32,8 +30,6 @@ link = soup.findAll("a")
 
 for link in soup.find_all("a", href=re.compile("(?<=/url\?q=)(htt.*://.*)")):
     print(re.split(":(?=http)", link["href"].replace("/url?q=", "")))
-<<<<<<< HEAD
-=======
 
-print("="*20,a)
->>>>>>> 78bc926d3ff0711237a2468ae77c014c2dec24b3
+print("="*20,"\n\n",a[9])
+
