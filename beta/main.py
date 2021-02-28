@@ -211,12 +211,12 @@ def main():
 	    
 	
 	if strd[0]==prefix and strd[1]=="cari":
-		strd.pop(1)
-		strd.pop(0)
         
 		if strd[2]=="2":
 
 			strd.pop(2)
+			strd.pop(1)
+			strd.pop(0)
 
 			jadi =' '.join(strd)
 			
@@ -255,6 +255,8 @@ def main():
 			reply={"reply":f"hasil untuk {jadi} adalah\n\n{c[0]+c[1]+c[2]+c[3]+c[4]}"}
 		
 		else:
+			strd.pop(1)
+			strd.pop(0)
 			
 			a=[]
 
