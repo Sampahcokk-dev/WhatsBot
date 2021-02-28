@@ -1,16 +1,29 @@
-from bs4 import BeautifulSoup 
 import requests as rq
-a =rq.get("https://www.bmkg.go.id/cuaca/prakiraan-cuaca.bmkg?Kota=Bontang&AreaID=501350&Prov=16")
-soup=BeautifulSoup(a.text,'html.parser')
+from bs4 import BeautifulSoup
 
-div=soup.find('div',{'id':'TabPaneCuaca1'})
+s=rq.session()
 
-#print(div.text)
-import re
-bla=div.text.replace("\n"," ")
-jadi=re.split(" \n",bla)
-#jadi=div.text.replace("\n"," ")
-#jadi.split(" ")
+a=s.get("https://elearning.smpypvdp.sch.id/login/index.php") 
+
+soup=BeautifulSoup(a.text,"html.parser")
+
+a=soup.find("input",{"name":"logintoken"})
+
+b=a.get("value")
+    
 
 
-print(jadi)
+
+login={"username":"6531","password":"2252006","logintoken":b,"anchor":""}
+
+ewq=s.post("https://elearning.smpypvdp.sch.id/login/index.php",login)
+
+
+
+
+jh =BeautifulSoup(s.get("https://elearning.smpypvdp.sch.id/my/#").text,"html.parser")
+
+bod=jh.find("div",{"class":"card-body p-3"})
+
+print(bod.text)
+
