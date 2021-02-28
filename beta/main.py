@@ -34,7 +34,7 @@ def main():
 	strd = message.split(" ")
 	
 	if strd[0]==prefix and strd[1]=="tugas":
-		if strd[2]=="sekolah":
+		if "sekolah" in strd :
 			
 			s=rq.session()
 			a=s.get("https://elearning.smpypvdp.sch.id/login/index.php") 
@@ -59,7 +59,14 @@ def main():
 
 			bod=jh.find("section",{"id":"inst14352"})
 
-			reply={"reply":bod.text}
+			data=bod.text.split("\n")
+
+			while '' in data:
+				data.remove('')
+
+			data="\n\n".join(data)
+
+			reply={"reply":data}
 		else:
 			reply={"reply":"*TUGAS NYA ADALAH*\n"+ data["k"][0]["tugas"]}
 		
@@ -739,12 +746,17 @@ def main():
 			div=soup.find('div',{'id':'TabPaneCuaca'+skrg})
 
 				#print(div.text)
-			bla=div.text.replace("\n","")
+			#bla=div.text.replace("\n","")
 			#jadi=re.split(" \n",bla)
 				#jadi=div.text.replace("\n"," ")
-				#jadi.split(" ")
+			data=div.text.split("\n")
 
-			reply={"reply":waktu.text+"\n\n"+bla}
+			while '' in data:
+				data.remove('')
+
+			data="\n\n".join(data)
+
+			reply={"reply":waktu.text+"\n\n"+data}
 
 	if strd[0]==prefix and strd[1]=="donlot":
 		cmnd=strd[3]
