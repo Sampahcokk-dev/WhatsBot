@@ -34,7 +34,34 @@ def main():
 	strd = message.split(" ")
 	
 	if strd[0]==prefix and strd[1]=="tugas":
-		reply={"reply":"*TUGAS NYA ADALAH*\n"+ data["k"][0]["tugas"]}
+		if strd[2]=="sekolah":
+			
+			s=rq.session()
+			a=s.get("https://elearning.smpypvdp.sch.id/login/index.php") 
+
+			soup=BeautifulSoup(a.text,"html.parser")
+
+			a=soup.find("input",{"name":"logintoken"})
+
+			b=a.get("value")
+				
+
+
+
+			login={"username":"tauguag","password":"Passnyagampangcuma123","logintoken":b,"anchor":""}
+
+			ewq=s.post("https://elearning.smpypvdp.sch.id/login/index.php",login)
+
+
+
+
+			jh =BeautifulSoup(s.get("https://elearning.smpypvdp.sch.id/my/#").text,"html.parser")
+
+			bod=jh.find("section",{"id":"inst14352"})
+
+			reply={"reply":bod.text}
+		else:
+			reply={"reply":"*TUGAS NYA ADALAH*\n"+ data["k"][0]["tugas"]}
 		
 	if strd[0]==prefix and strd[1]=="note":
 		reply={"reply":data["k"] [1]["note"]}
@@ -685,18 +712,18 @@ def main():
 	
 	if strd[0]==prefix and strd[1]=="hitung":
 
-		if strd[3]=="+":
+		if strd[3]=="+" or strd[3]=="tambah":
 			hasil=int(strd[2]) + int(strd[4])
-			reply={"reply":"*HASIL*\n\n"+hasil}
-		if strd[3]=="-":
+			reply={"reply":"*HASIL*\n\n"+str(hasil)}
+		if strd[3]=="-" or strd[3]=="kurang":
 			hasil=int(strd[2]) - int(strd[4])
-			reply={"reply":"*HASIL*\n\n"+hasil}
-		if strd[3]=="x"or strd[3]=="*":
+			reply={"reply":"*HASIL*\n\n"+str(hasil)}
+		if strd[3]=="x"or strd[3]=="*" or strd[3]=="kali":
 			hasil=int(strd[2]) * int(strd[4])
-			reply={"reply":"*HASIL*\n\n"+hasil}
+			reply={"reply":"*HASIL*\n\n"+str(hasil)}
 		
 
-			
+	if strd[0]==prefix and strd[1]==""
 			
 		
 
