@@ -3,7 +3,7 @@ from google_trans_new import google_translator
 from bs4 import BeautifulSoup
 import requests as rq 
 from googlesearch import search
-import random,wikipedia, time
+import random,wikipedia,time,re
 from covid import Covid
 import datetime as dt
 
@@ -184,19 +184,19 @@ def main():
 			
 				reply={"reply":str(aktip)+" total yg aktip 1dunia"}
 
-			if strd[3]=="mati":
+			elif strd[3]=="mati":
 				
 				mati=kopid.get_total_deaths()
 				
 				reply={"reply":str(mati)+" total yang Innalilahi"}
 			
-			if strd[3]=="sembuh":
+			elif strd[3]=="sembuh":
 				
 				smbuh=kopid.get_total_recovered()
 				
 				reply={"reply":str(smbuh)+" total yang Alhamdulillah"}
 			
-			if strd[3]=="konfirm":
+			elif strd[3]=="konfirm":
 				
 				konfirm=kopid.get_total_confirmed_cases()
 				
@@ -211,20 +211,61 @@ def main():
 	    
 	
 	if strd[0]==prefix and strd[1]=="cari":
-        
 		strd.pop(1)
 		strd.pop(0)
         
-		a=[]
+		if strd[2]=="2":
 
-		jadi =' '.join(strd)
-        
-        
-		for j in search(jadi, tld="co.in", num=10, stop=None, pause=1): 
-			a.append(j)
+			strd.pop(2)
 
-		hasilS='\n\n'.join(a)
-		reply={"reply":"hasi pencarian untuk"+jadi+"adalah\n\n" + hasilS}
+			jadi =' '.join(strd)
+			
+			param = {"q":jadi} 
+
+			a=[]
+			b=[]
+			c=[]
+
+			headers = {
+				"User-Agent":
+				"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15"
+			}
+
+			r = rq.get("https://google.com/search", params=param, headers=headers)
+
+			soup = BeautifulSoup(r.content, "lxml")
+			soup.prettify()
+
+			title = soup.select(".DKV0Md span")
+
+			for t in title:
+				a.append(f"{t.get_text()}\n")
+
+			snippets = soup.select(".aCOpRe span:not(.f)")
+
+			for d in snippets:
+				b.append(f"{d.get_text()}\n\n")
+
+
+			
+
+			for i in range(5):
+				c.append(a[i]+b[i])
+
+			reply={"reply":f"hasil untuk {jadi} adalah\n\n{c[0]+c[1]+c[2]+c[3]+c[4]}"}
+		
+		else:
+			
+			a=[]
+
+			jadi =' '.join(strd)
+			
+			
+			for j in search(jadi, tld="co.in", num=10, stop=None, pause=1): 
+				a.append(j)
+
+			hasilS='\n\n'.join(a)
+			reply={"reply":"hasi pencarian untuk"+jadi+"adalah\n\n" + hasilS}
 		
 	if strd[0]==prefix and strd[1]=="randomdari" :
 		 
@@ -333,7 +374,7 @@ def main():
 		
 		time.sleep(int(strd[2]))
 		
-		reply={"reply" :"test"} 
+		reply={"reply" :" "} 
 	
 	if strd[0]==prefix and strd[1]=="game":
 
@@ -677,7 +718,7 @@ def main():
 
 	if strd[0]==prefix and strd[1]=="update":
 
-		reply={"reply":"beta"}
+		reply={"reply":"\n"}
 
 	if strd[0]==prefix and strd[1]=="cuaca":
 		skrg=None
@@ -696,7 +737,6 @@ def main():
 			div=soup.find('div',{'id':'TabPaneCuaca'+skrg})
 
 				#print(div.text)
-			#import re
 			bla=div.text.replace("\n","")
 			#jadi=re.split(" \n",bla)
 				#jadi=div.text.replace("\n"," ")
@@ -723,7 +763,7 @@ def main():
 			reply={"reply":"*HASIL*\n\n"+str(hasil)}
 		
 
-			
+	
 		
 
 
