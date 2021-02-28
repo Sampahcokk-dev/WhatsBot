@@ -723,7 +723,6 @@ def main():
 			reply={"reply":"*HASIL*\n\n"+str(hasil)}
 		
 
-	if strd[0]==prefix and strd[1]==""
 			
 		
 
