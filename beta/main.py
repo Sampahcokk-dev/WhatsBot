@@ -61,7 +61,7 @@ def main():
 
 	
 
-			reply={"reply":bod}
+			reply={"reply":bod.text}
 		else:
 			reply={"reply":"*TUGAS NYA ADALAH*\n"+ data["k"][0]["tugas"]}
 		
