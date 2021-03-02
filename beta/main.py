@@ -57,7 +57,7 @@ def main():
 
 			jh =BeautifulSoup(s.get("https://elearning.smpypvdp.sch.id/my/#").text,"html.parser")
 
-			bod=jh.find("div",{"id":"block-timeline-603de2ae7384b603de2ae69d162"})
+			bod=jh.find("section",{"id":"inst14356"})
 
 	
 
