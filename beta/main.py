@@ -57,16 +57,11 @@ def main():
 
 			jh =BeautifulSoup(s.get("https://elearning.smpypvdp.sch.id/my/#").text,"html.parser")
 
-			bod=jh.find("section",{"id":"inst14352"})
+			bod=jh.find("div",{"data-region":"paged-content-page"})
 
-			data=bod.text.split("\n")
+	
 
-			while '' in data:
-				data.remove('')
-
-			data="\n\n".join(data)
-
-			reply={"reply":data}
+			reply={"reply":bod}
 		else:
 			reply={"reply":"*TUGAS NYA ADALAH*\n"+ data["k"][0]["tugas"]}
 		
@@ -759,22 +754,34 @@ def main():
 			reply={"reply":waktu.text+"\n\n"+data}
 
 	if strd[0]==prefix and strd[1]=="donlot":
-		cmnd=strd[3]
+		cmnd=strd[2]
 		linkjadi="https://sfrom.net/"+cmnd
 
 		reply={"reply":"sip jadi\nlink untuk donlot\n\n"+liatlink(linkjadi )}
 	
 	if strd[0]==prefix and strd[1]=="hitung":
 
-		if strd[3]=="+" or strd[3]=="tambah":
-			hasil=int(strd[2]) + int(strd[4])
-			reply={"reply":"*HASIL*\n\n"+str(hasil)}
-		if strd[3]=="-" or strd[3]=="kurang":
-			hasil=int(strd[2]) - int(strd[4])
-			reply={"reply":"*HASIL*\n\n"+str(hasil)}
-		if strd[3]=="x"or strd[3]=="*" or strd[3]=="kali":
-			hasil=int(strd[2]) * int(strd[4])
-			reply={"reply":"*HASIL*\n\n"+str(hasil)}
+		for n, i in enumerate(strd):
+			if i == "x":
+				strd[n] = "*"
+			elif i ==":":
+				strd[n] = "/"
+			elif i =="bghabis":
+				strd[n]="%"
+			elif i =="pangkat":
+				strd[n]="**"
+		
+		
+		strd.pop(1)
+		strd.pop(0)
+
+		jadi=''.join(strd)
+
+		jadiCok=str(eval(jadi))
+
+		reply={"reply":"hasil:\n\n"+jadiCok}
+
+
 		
 
 	
