@@ -481,63 +481,69 @@ def main():
 		elif strd[2]=="tictactoe" :
 			if data["k"][0]["giliran"]=="1":
 				if strd[3]==data["k"][0]["nama1"]:
-					#angka=strd[4]
+					if data["k"][0][strd[4]]!="❌":
+							
+						#angka=strd[4]
 
-					#exec("%s = %d" % (angka,"x"))
+						#exec("%s = %d" % (angka,"x"))
 
-					jsonFile=open("dataJson.json")
-					data=json.load(jsonFile)
-					data["k"][0][strd[4]]="❌"
+						jsonFile=open("dataJson.json")
+						data=json.load(jsonFile)
+						data["k"][0][strd[4]]="❌"
 
-					aFile=open("dataJson.json","w")
-					json.dump(data,aFile)
-					aFile.close()
+						aFile=open("dataJson.json","w")
+						json.dump(data,aFile)
+						aFile.close()
 
-					jsonFile=open("dataJson.json")
-					data=json.load(jsonFile)
-					data["k"][0]["giliran"]="2"
+						jsonFile=open("dataJson.json")
+						data=json.load(jsonFile)
+						data["k"][0]["giliran"]="2"
 
-					aFile=open("dataJson.json","w")
-					json.dump(data,aFile)
-					aFile.close()
+						aFile=open("dataJson.json","w")
+						json.dump(data,aFile)
+						aFile.close()
 
-					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="❌" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="❌" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="❌" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="❌" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="❌" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌":
-						reply={"reply":"jir "+data["k"][0]["nama1"]+" menang"}
-					elif data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="⭕" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="⭕" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="⭕" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕":
-						reply={"reply":"jir "+data["k"][0]["nama2"]+" menang"}
+						if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="❌" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="❌" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="❌" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="❌" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="❌" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌":
+							reply={"reply":"jir "+data["k"][0]["nama1"]+" menang"}
+						elif data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="⭕" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="⭕" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="⭕" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕":
+							reply={"reply":"jir "+data["k"][0]["nama2"]+" menang"}
+						else:
+							reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
 					else:
-						reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
+						reply={"reply":"udh diisi blok"}
 
 
 			elif data["k"][0]["giliran"]=="2":
 				if strd[3]==data["k"][0]["nama2"]:
-					#angka=strd[4]
+					if data["k"][0][strd[4]]!="⭕":
+						#angka=strd[4]
 
-					#exec("%s = %d" % (angka,"x"))
+						#exec("%s = %d" % (angka,"x"))
 
-					jsonFile=open("dataJson.json")
-					data=json.load(jsonFile)
-					data["k"][0][strd[4]]="⭕"
+						jsonFile=open("dataJson.json")
+						data=json.load(jsonFile)
+						data["k"][0][strd[4]]="⭕"
 
-					aFile=open("dataJson.json","w")
-					json.dump(data,aFile)
-					aFile.close()
+						aFile=open("dataJson.json","w")
+						json.dump(data,aFile)
+						aFile.close()
 
-					jsonFile=open("dataJson.json")
-					data=json.load(jsonFile)
-					data["k"][0]["giliran"]="1"
+						jsonFile=open("dataJson.json")
+						data=json.load(jsonFile)
+						data["k"][0]["giliran"]="1"
 
-					aFile=open("dataJson.json","w")
-					json.dump(data,aFile)
-					aFile.close()
+						aFile=open("dataJson.json","w")
+						json.dump(data,aFile)
+						aFile.close()
 
-					if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="❌" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="❌" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="❌" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="❌" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="❌" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌":
-						reply={"reply":"jir "+data["k"][0]["nama1"]+" menang"}
-					elif data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="⭕" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="⭕" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="⭕" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕":
-						reply={"reply":"jir "+data["k"][0]["nama2"]+" menang"}
+						if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="❌" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="❌" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="❌" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="❌" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="❌" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌":
+							reply={"reply":"jir "+data["k"][0]["nama1"]+" menang"}
+						elif data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="⭕" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="⭕" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="⭕" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕":
+							reply={"reply":"jir "+data["k"][0]["nama2"]+" menang"}
+						else:
+							reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
 					else:
-						reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
-
+						reply={"reply":"udh diisi asw"}
 
 
 
@@ -551,8 +557,8 @@ def main():
 				reply={"reply":"*BLOK* lu kurang gede jawabanny"  }
 			elif data["k"] [0]["tebak"]<jawab:
 				reply={"reply":"*BLOK* lu kelebihan jawabanny"  }
-			else:
-				reply={"reply" :"*BLOK* salah"} 
+			elif:
+				reply={"reply" :"*LEMAH AJG* jawabanny" +str(data["k"] [0]["tebak"])} 
 		elif strd [2]=="tebak":
 			
 			hasilRan=random.randrange(int(strd[3]),int(strd[5]))
