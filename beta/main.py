@@ -481,7 +481,7 @@ def main():
 		elif strd[2]=="tictactoe" :
 			if data["k"][0]["giliran"]=="1":
 				if strd[3]==data["k"][0]["nama1"]:
-					if data["k"][0][strd[4]]!="❌":
+					if data["k"][0][strd[4]] not in "❌⭕":
 							
 						#angka=strd[4]
 
@@ -515,7 +515,7 @@ def main():
 
 			elif data["k"][0]["giliran"]=="2":
 				if strd[3]==data["k"][0]["nama2"]:
-					if data["k"][0][strd[4]]!="⭕":
+					if data["k"][0][strd[4]]  not in "❌⭕":
 						#angka=strd[4]
 
 						#exec("%s = %d" % (angka,"x"))
