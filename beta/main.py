@@ -557,7 +557,7 @@ def main():
 				reply={"reply":"*BLOK* lu kurang gede jawabanny"  }
 			elif data["k"] [0]["tebak"]<jawab:
 				reply={"reply":"*BLOK* lu kelebihan jawabanny"  }
-			elif:
+			elif data["k"] [0]["tebak"]=="nyerah"
 				reply={"reply" :"*LEMAH AJG* jawabanny" +str(data["k"] [0]["tebak"])} 
 		elif strd [2]=="tebak":
 			
