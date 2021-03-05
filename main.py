@@ -470,55 +470,6 @@ def main():
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
-			data=json.load(jsonFile)
-			data["k"][0]["10"]="🔟"
-			aFile=open("dataJson.json","w")
-			json.dump(data,aFile)
-			aFile.close()
-
-			jsonFile=open("dataJson.json")
-			data=json.load(jsonFile)
-			data["k"][0]["11"]="1️⃣"
-			aFile=open("dataJson.json","w")
-			json.dump(data,aFile)
-			aFile.close()
-
-			jsonFile=open("dataJson.json")
-			data=json.load(jsonFile)
-			data["k"][0]["12"]="2️⃣"
-			aFile=open("dataJson.json","w")
-			json.dump(data,aFile)
-			aFile.close()
-
-			jsonFile=open("dataJson.json")
-			data=json.load(jsonFile)
-			data["k"][0]["13"]="3️⃣"
-			aFile=open("dataJson.json","w")
-			json.dump(data,aFile)
-			aFile.close()
-
-			jsonFile=open("dataJson.json")
-			data=json.load(jsonFile)
-			data["k"][0]["14"]="4️⃣"
-			aFile=open("dataJson.json","w")
-			json.dump(data,aFile)
-			aFile.close()
-
-			jsonFile=open("dataJson.json")
-			data=json.load(jsonFile)
-			data["k"][0]["15"]="5️⃣"
-			aFile=open("dataJson.json","w")
-			json.dump(data,aFile)
-			aFile.close()
-
-			jsonFile=open("dataJson.json")
-			data=json.load(jsonFile)
-			data["k"][0]["16"]="6️⃣"
-			aFile=open("dataJson.json","w")
-			json.dump(data,aFile)
-			aFile.close()
-
 			reply={"reply":"dah mulai "+strd[4]+" duluan"}
 
 		elif strd[2]=="tictactoe" and strd[3]=="liat":
@@ -552,12 +503,12 @@ def main():
 						json.dump(data,aFile)
 						aFile.close()
 
-						if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="❌" or data["k"][0]["2"]==data["k"][0]["3"]==data["k"][0]["4"]=="❌" or data["k"][0]["5"]==data["k"][0]["6"]==data["k"][0]["7"]=="❌" or data["k"][0]["6"]==data["k"][0]["7"]==data["k"][0]["8"]=="❌" or data["k"][0]["9"]==data["k"][0]["10"]==data["k"][0]["11"]=="❌" or data["k"][0]["10"]==data["k"][0]["11"]==data["k"][0]["12"]=="❌" or data["k"][0]["13"]==data["k"][0]["14"]==data["k"][0]["15"]=="❌" or data["k"][0]["14"]==data["k"][0]["15"]==data["k"][0]["16"]=="❌" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌" or data["k"][0]["2"]==data["k"][0]["6"]==data["k"][0]["10"]=="❌"or data["k"][0]["3"]==data["k"][0]["7"]==data["k"][0]["10"]=="❌" or data["k"][0]["4"]==data["k"][0]["8"]==data["k"][0]["12"]=="❌" or data["k"][0]["5"]==data["k"][0]["9"]==data["k"][0]["13"]=="❌" or data["k"][0]["6"]==data["k"][0]["10"]==data["k"][0]["14"]=="❌" or data["k"][0]["7"]==data["k"][0]["11"]==data["k"][0]["15"]=="❌" or data["k"][0]["8"]==data["k"][0]["12"]==data["k"][0]["16"]=="❌" or data["k"][0]["1"]==data["k"][0]["6"]==data["k"][0]["11"]=="❌" or data["k"][0]["9"]==data["k"][0]["6"]==data["k"][0]["3"]=="❌" or data["k"][0]["7"]==data["k"][0]["10"]==data["k"][0]["13"]=="❌" or data["k"][0]["5"]==data["k"][0]["10"]==data["k"][0]["15"]=="❌" or data["k"][0]["8"]==data["k"][0]["11"]==data["k"][0]["14"]=="❌":
+						if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="❌" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="❌" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="❌" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="❌" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="❌" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌" or data["k"][0]["8"]==data["k"][0]["5"]==data["k"][0]["2"]=="❌":
 							reply={"reply":"jir "+data["k"][0]["nama1"]+" menang"}
-						elif data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["2"]==data["k"][0]["3"]==data["k"][0]["4"]=="⭕" or data["k"][0]["5"]==data["k"][0]["6"]==data["k"][0]["7"]=="⭕" or data["k"][0]["6"]==data["k"][0]["7"]==data["k"][0]["8"]=="⭕" or data["k"][0]["9"]==data["k"][0]["10"]==data["k"][0]["11"]=="⭕" or data["k"][0]["10"]==data["k"][0]["11"]==data["k"][0]["12"]=="⭕" or data["k"][0]["13"]==data["k"][0]["14"]==data["k"][0]["15"]=="⭕" or data["k"][0]["14"]==data["k"][0]["15"]==data["k"][0]["16"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["2"]==data["k"][0]["6"]==data["k"][0]["10"]=="⭕"or data["k"][0]["3"]==data["k"][0]["7"]==data["k"][0]["10"]=="⭕" or data["k"][0]["4"]==data["k"][0]["8"]==data["k"][0]["12"]=="⭕" or data["k"][0]["5"]==data["k"][0]["9"]==data["k"][0]["13"]=="⭕" or data["k"][0]["6"]==data["k"][0]["10"]==data["k"][0]["14"]=="⭕" or data["k"][0]["7"]==data["k"][0]["11"]==data["k"][0]["15"]=="⭕" or data["k"][0]["8"]==data["k"][0]["12"]==data["k"][0]["16"]=="⭕" or data["k"][0]["1"]==data["k"][0]["6"]==data["k"][0]["11"]=="⭕" or data["k"][0]["9"]==data["k"][0]["6"]==data["k"][0]["3"]=="⭕" or data["k"][0]["7"]==data["k"][0]["10"]==data["k"][0]["13"]=="⭕" or data["k"][0]["5"]==data["k"][0]["10"]==data["k"][0]["15"]=="⭕" or data["k"][0]["8"]==data["k"][0]["11"]==data["k"][0]["14"]=="⭕":
+						elif data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="⭕" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="⭕" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="⭕" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["2"]==data["k"][0]["5"]==data["k"][0]["8"]=="⭕":
 							reply={"reply":"jir "+data["k"][0]["nama2"]+" menang"}
 						else:
-							reply={"reply":f"|{data["k"][0]["1"]}|{data["k"][0]["2"]}|{data["k"][0]["3"]}|{data["k"][0]["4"]}|\n|{data["k"][0]["5"]}|{data["k"][0]["6"]}|{data["k"][0]["7"]}|{data["k"][0]["8"]}|\n|{data["k"][0]["9"]}|{data["k"][0]["10"]}|{data["k"][0]["11"]}|{data["k"][0]["12"]}|\n|{data["k"][0]["13"]}|{data["k"][0]["14"]}|{data["k"][0]["15"]}|{data["k"][0]["16"]}|\n"}
+							reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
 					else:
 						reply={"reply":"udh diisi blok"}
 
@@ -585,12 +536,12 @@ def main():
 						json.dump(data,aFile)
 						aFile.close()
 
-						if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="❌" or data["k"][0]["2"]==data["k"][0]["3"]==data["k"][0]["4"]=="❌" or data["k"][0]["5"]==data["k"][0]["6"]==data["k"][0]["7"]=="❌" or data["k"][0]["6"]==data["k"][0]["7"]==data["k"][0]["8"]=="❌" or data["k"][0]["9"]==data["k"][0]["10"]==data["k"][0]["11"]=="❌" or data["k"][0]["10"]==data["k"][0]["11"]==data["k"][0]["12"]=="❌" or data["k"][0]["13"]==data["k"][0]["14"]==data["k"][0]["15"]=="❌" or data["k"][0]["14"]==data["k"][0]["15"]==data["k"][0]["16"]=="❌" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌" or data["k"][0]["2"]==data["k"][0]["6"]==data["k"][0]["10"]=="❌"or data["k"][0]["3"]==data["k"][0]["7"]==data["k"][0]["10"]=="❌" or data["k"][0]["4"]==data["k"][0]["8"]==data["k"][0]["12"]=="❌" or data["k"][0]["5"]==data["k"][0]["9"]==data["k"][0]["13"]=="❌" or data["k"][0]["6"]==data["k"][0]["10"]==data["k"][0]["14"]=="❌" or data["k"][0]["7"]==data["k"][0]["11"]==data["k"][0]["15"]=="❌" or data["k"][0]["8"]==data["k"][0]["12"]==data["k"][0]["16"]=="❌" or data["k"][0]["1"]==data["k"][0]["6"]==data["k"][0]["11"]=="❌" or data["k"][0]["9"]==data["k"][0]["6"]==data["k"][0]["3"]=="❌" or data["k"][0]["7"]==data["k"][0]["10"]==data["k"][0]["13"]=="❌" or data["k"][0]["5"]==data["k"][0]["10"]==data["k"][0]["15"]=="❌" or data["k"][0]["8"]==data["k"][0]["11"]==data["k"][0]["14"]=="❌":
+						if data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="❌" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="❌" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="❌" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="❌" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="❌" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="❌" or data["k"][0]["8"]==data["k"][0]["5"]==data["k"][0]["2"]=="❌" :
 							reply={"reply":"jir "+data["k"][0]["nama1"]+" menang"}
-						elif data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["2"]==data["k"][0]["3"]==data["k"][0]["4"]=="⭕" or data["k"][0]["5"]==data["k"][0]["6"]==data["k"][0]["7"]=="⭕" or data["k"][0]["6"]==data["k"][0]["7"]==data["k"][0]["8"]=="⭕" or data["k"][0]["9"]==data["k"][0]["10"]==data["k"][0]["11"]=="⭕" or data["k"][0]["10"]==data["k"][0]["11"]==data["k"][0]["12"]=="⭕" or data["k"][0]["13"]==data["k"][0]["14"]==data["k"][0]["15"]=="⭕" or data["k"][0]["14"]==data["k"][0]["15"]==data["k"][0]["16"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["2"]==data["k"][0]["6"]==data["k"][0]["10"]=="⭕"or data["k"][0]["3"]==data["k"][0]["7"]==data["k"][0]["10"]=="⭕" or data["k"][0]["4"]==data["k"][0]["8"]==data["k"][0]["12"]=="⭕" or data["k"][0]["5"]==data["k"][0]["9"]==data["k"][0]["13"]=="⭕" or data["k"][0]["6"]==data["k"][0]["10"]==data["k"][0]["14"]=="⭕" or data["k"][0]["7"]==data["k"][0]["11"]==data["k"][0]["15"]=="⭕" or data["k"][0]["8"]==data["k"][0]["12"]==data["k"][0]["16"]=="⭕" or data["k"][0]["1"]==data["k"][0]["6"]==data["k"][0]["11"]=="⭕" or data["k"][0]["9"]==data["k"][0]["6"]==data["k"][0]["3"]=="⭕" or data["k"][0]["7"]==data["k"][0]["10"]==data["k"][0]["13"]=="⭕" or data["k"][0]["5"]==data["k"][0]["10"]==data["k"][0]["15"]=="⭕" or data["k"][0]["8"]==data["k"][0]["11"]==data["k"][0]["14"]=="⭕":
+						elif data["k"][0]["1"]==data["k"][0]["2"]==data["k"][0]["3"]=="⭕" or data["k"][0]["4"]==data["k"][0]["5"]==data["k"][0]["6"]=="⭕" or data["k"][0]["7"]==data["k"][0]["8"]==data["k"][0]["9"]=="⭕" or data["k"][0]["1"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["7"]==data["k"][0]["5"]==data["k"][0]["3"]=="⭕" or data["k"][0]["1"]==data["k"][0]["4"]==data["k"][0]["7"]=="⭕" or data["k"][0]["3"]==data["k"][0]["5"]==data["k"][0]["9"]=="⭕" or data["k"][0]["8"]==data["k"][0]["5"]==data["k"][0]["2"]=="⭕":
 							reply={"reply":"jir "+data["k"][0]["nama2"]+" menang"}
 						else:
-							reply={"reply":f"|{data["k"][0]["1"]}|{data["k"][0]["2"]}|{data["k"][0]["3"]}|{data["k"][0]["4"]}|\n|{data["k"][0]["5"]}|{data["k"][0]["6"]}|{data["k"][0]["7"]}|{data["k"][0]["8"]}|\n|{data["k"][0]["9"]}|{data["k"][0]["10"]}|{data["k"][0]["11"]}|{data["k"][0]["12"]}|\n|{data["k"][0]["13"]}|{data["k"][0]["14"]}|{data["k"][0]["15"]}|{data["k"][0]["16"]}|\n"}
+							reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|"}
 					else:
 						reply={"reply":"udh diisi asw"}
 
