@@ -81,11 +81,11 @@ def main():
 
 		jadi=("tlakir di update : "+waktu+"\n\n"+jadi)
 
-		jsonFile=open("dataJson.json")
+		jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 		data=json.load(jsonFile)
 		data["k"][0]["tugas"]=jadi
 
-		aFile=open("dataJson.json","w")
+		aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 		json.dump(data,aFile)
 		aFile.close()
 
@@ -98,11 +98,11 @@ def main():
 
 		jadi =' '.join(strd)
 
-		jsonFile=open("dataJson.json")
+		jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 		data=json.load(jsonFile)
 		data["k"][1]["note"]=jadi
 
-		aFile=open("dataJson.json","w")
+		aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 		json.dump(data,aFile)
 		aFile.close()
 
@@ -114,11 +114,11 @@ def main():
 
 		jadi =strd[2]
 
-		jsonFile=open("dataJson.json")
+		jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 		data=json.load(jsonFile)
 		data["k"][0]["prefix"]=jadi
 
-		aFile=open("dataJson.json","w")
+		aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 		json.dump(data,aFile)
 		aFile.close()
 
@@ -386,138 +386,138 @@ def main():
 
 		if strd[2]=="tictactoe" and strd[3]=="mulai":
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["nama1"]=strd[4]
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["giliran"]="1"
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
 
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["nama2"]=strd[5]
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["1"]="1️⃣"
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["2"]="2️⃣"
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["3"]="3️⃣"
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["4"]="4️⃣"
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["5"]="5️⃣"
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["6"]="6️⃣"
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["7"]="7️⃣"
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["8"]="8️⃣"
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["9"]="9️⃣"
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["10"]="🔟"
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["11"]="1️⃣"
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["12"]="2️⃣"
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["13"]="3️⃣"
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["14"]="4️⃣"
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["15"]="5️⃣"
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["16"]="6️⃣"
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
@@ -538,19 +538,19 @@ def main():
 
 						#exec("%s = %d" % (angka,"x"))
 
-						jsonFile=open("dataJson.json")
+						jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 						data=json.load(jsonFile)
 						data["k"][0][strd[4]]="❌"
 
-						aFile=open("dataJson.json","w")
+						aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 						json.dump(data,aFile)
 						aFile.close()
 
-						jsonFile=open("dataJson.json")
+						jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 						data=json.load(jsonFile)
 						data["k"][0]["giliran"]="2"
 
-						aFile=open("dataJson.json","w")
+						aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 						json.dump(data,aFile)
 						aFile.close()
 
@@ -571,19 +571,19 @@ def main():
 
 						#exec("%s = %d" % (angka,"x"))
 
-						jsonFile=open("dataJson.json")
+						jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 						data=json.load(jsonFile)
 						data["k"][0][strd[4]]="⭕"
 
-						aFile=open("dataJson.json","w")
+						aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 						json.dump(data,aFile)
 						aFile.close()
 
-						jsonFile=open("dataJson.json")
+						jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 						data=json.load(jsonFile)
 						data["k"][0]["giliran"]="1"
 
-						aFile=open("dataJson.json","w")
+						aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 						json.dump(data,aFile)
 						aFile.close()
 
@@ -614,11 +614,11 @@ def main():
 
 			hasilRan=random.randrange(int(strd[3]),int(strd[5]))
 
-			jsonFile=open("dataJson.json")
+			jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 			data=json.load(jsonFile)
 			data["k"][0]["tebak"]=hasilRan
 
-			aFile=open("dataJson.json","w")
+			aFile=open("/home/samphacokk/wa/beta/dataJson.json","w")
 			json.dump(data,aFile)
 			aFile.close()
 
@@ -836,7 +836,7 @@ def main():
 			while '' in data:
 				data.remove('')
 
-			data="".join(data)
+			data="\n".join(data)
 
 			reply={"reply":waktu.text+"\n\n"+data+"\nhttps://www.bmkg.go.id/cuaca/prakiraan-cuaca.bmkg?Kota=Bontang&AreaID=501350&Prov=16#TabPaneCuaca"+skrg}
 
