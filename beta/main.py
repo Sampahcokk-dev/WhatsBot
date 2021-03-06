@@ -28,7 +28,11 @@ def main():
 
 	sender =request.form["sender"]
 	message=request.form["message"]
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 844aca3753cfcad8fe7ec18b3998ade77327eda1
 	jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 	data=json.load(jsonFile)
 
