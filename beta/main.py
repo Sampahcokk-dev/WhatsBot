@@ -837,7 +837,7 @@ def main():
 			while '' in data:
 				data.remove('')
 
-			data="\n".join(data)
+			data="".join(data)
 
 			reply={"reply":waktu.text+"\n\n"+data+"\nhttps://www.bmkg.go.id/cuaca/prakiraan-cuaca.bmkg?Kota=Bontang&AreaID=501350&Prov=16#TabPaneCuaca"+skrg}
 
