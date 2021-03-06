@@ -29,7 +29,7 @@ def main():
 	sender =request.form["sender"]
 	message=request.form["message"]
 	
-	jsonFile=open("dataJson.json")
+	jsonFile=open("/home/samphacokk/wa/beta/dataJson.json")
 	data=json.load(jsonFile)
 	
 	prefix=data["k"][0]["prefix"]
