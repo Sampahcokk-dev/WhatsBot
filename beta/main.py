@@ -1,4 +1,4 @@
-
+# coding: utf8
 from flask import Flask,jsonify,request,json
 from google_trans_new import google_translator
 from bs4 import BeautifulSoup
@@ -8,7 +8,7 @@ import random,wikipedia,time,re
 from covid import Covid
 import datetime as dt
 
-# coding: utf8
+
 
 kopid=Covid(source="worldometers") 
 
