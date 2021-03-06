@@ -10,7 +10,7 @@ import datetime as dt
 
 
 
-kopid=Covid(source="worldometers") 
+kopid=Covid() 
 
 translet=google_translator()
 
