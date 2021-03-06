@@ -247,7 +247,7 @@ def main():
 			snippets = soup.select(".aCOpRe span:not(.f)")
 
 			for d in snippets:
-				b.append(f"{d.get_text()}\n\n")
+				b.append({d.get_text()})
 
 
 			
