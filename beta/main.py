@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Flask,jsonify,request,json
 from google_trans_new import google_translator
 from bs4 import BeautifulSoup
@@ -519,14 +520,14 @@ def main():
 			json.dump(data,aFile)
 			aFile.close()
 
-			reply={"reply":"dah mulai "+strd[4]+" duluan"}
+			reply={"reply":"dah mulai "+strd[4]+" duluan\n\n"+"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|"+data["k"][0]["4"]+"|\n|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|\n|"+data["k"][0]["9"]+"|"+data["k"][0]["10"]+"|"+data["k"][0]["11"]+"|"+data["k"][0]["12"]+"|\n|"+data["k"][0]["13"]+"|"+data["k"][0]["14"]+"|"+data["k"][0]["15"]+"|"+data["k"][0]["16"]+"|\n"}
 
 		elif strd[2]=="tictactoe" and strd[3]=="liat":
 			if data["k"][0]["giliran"]=="1":
 				giliran="sekarang giliran "+data["k"][0]["nama1"]
 			elif data["k"][0]["giliran"]=="2":
 				giliran="sekarang giliran "+data["k"][0]["nama2"]
-			reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|\n|"+data["k"][0]["4"]+"|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|\n|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|"+data["k"][0]["9"]+"|\n\n"+giliran}
+			reply={"reply":"|"+data["k"][0]["1"]+"|"+data["k"][0]["2"]+"|"+data["k"][0]["3"]+"|"+data["k"][0]["4"]+"|\n|"+data["k"][0]["5"]+"|"+data["k"][0]["6"]+"|"+data["k"][0]["7"]+"|"+data["k"][0]["8"]+"|\n|"+data["k"][0]["9"]+"|"+data["k"][0]["10"]+"|"+data["k"][0]["11"]+"|"+data["k"][0]["12"]+"|\n|"+data["k"][0]["13"]+"|"+data["k"][0]["14"]+"|"+data["k"][0]["15"]+"|"+data["k"][0]["16"]+"|"+"\n\n"+giliran}
 		elif strd[2]=="tictactoe" :
 			if data["k"][0]["giliran"]=="1":
 				if strd[3]==data["k"][0]["nama1"]:
@@ -693,6 +694,36 @@ def main():
 		else:
 			reply={"reply" :b+"\n\n"+str(ewq.status_code) +"\n\n"+bod[1].text}
 			
+	if strd[0]==prefix and strd[1]=="link"and strd[2]=="absen":
+		if strd[3]=="ips":
+			idPel="1640"
+		if strd[3]=="fisika":
+			idPel="941"
+		if strd[3]=="alq":
+			idPel="872"
+		if strd[3]=="pkn":
+			idPel="938"
+		if strd[3]=="bindo":
+			idPel="2033"
+		if strd[3]=="sbk":
+			idPel="1640"
+		if strd[3]=="kry":
+			idPel="9004"
+		if strd[3]=="olga":
+			idPel="901"
+		if strd[3]=="bing":
+			idPel=""
+		if strd[3]=="matdas":
+			idPel="2896"
+		if strd[3]=="agama":
+			idPel="2115"
+		if strd[3]=="mtk":
+			idPel=""
+		if strd[3]=="conver":
+			idPel=""
+
+		reply={"reply":"link absenny adalah\nhttps://elearning.smpypvdp.sch.id/mod/attendance/view.php?id=" +idPel}
+
 	if strd[0]==prefix and strd[1]=="hadits":
 
 		a=rq.get("https://m.bola.com/ragam/read/4268283/25-kata-kata-mutiara-islami-dari-hadist-nabi-menenangkan-dan-memberi-pelajaran") 
@@ -804,9 +835,9 @@ def main():
 			while '' in data:
 				data.remove('')
 
-			data="\n\n".join(data)
+			data="\n".join(data)
 
-			reply={"reply":waktu.text+"\n\n"+data}
+			reply={"reply":waktu.text+"\n\n"+data+"\nhttps://www.bmkg.go.id/cuaca/prakiraan-cuaca.bmkg?Kota=Bontang&AreaID=501350&Prov=16#TabPaneCuaca"+skrg}
 
 	if strd[0]==prefix and strd[1]=="donlot":
 		cmnd=strd[2]
@@ -882,4 +913,3 @@ def main():
 	
 if __name__ == "__main__":
 	main()
-
