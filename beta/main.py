@@ -242,7 +242,7 @@ def main():
 			title = soup.select(".DKV0Md span")
 
 			for t in title:
-				a.append(f"{t.get_text()}\n")
+				a.append(t.get_text())
 
 			snippets = soup.select(".aCOpRe span:not(.f)")
 
