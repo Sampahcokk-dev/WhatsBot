@@ -43,6 +43,7 @@ def main():
 		link=strd[4]  #"http://192.168.1.6:8080/"
 
 		#login
+		s=rq.session()
 		a=s.get(link+"login/index.php")
 
 		soup=bs(a.text,"html.parser")
