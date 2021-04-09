@@ -75,7 +75,7 @@ def main():
 		json.dump(data,aFile)
 		aFile.close()
 		
-		kl=f"sudah dengan link {link} atem {atem} cmid {cmid}"
+		kl="sudah dengan link"link+"atem"+atem+" cmid "+cmid
 
 		reply={"reply":kl}
 
@@ -88,7 +88,7 @@ def main():
 		input=strd[2]
 		index = [idx for idx, s in enumerate(bla) if input in s][0]
 
-		reply={"reply":'Question'+str(index)+'\n\n'+bla[index]}
+		reply={"reply":'Question '+str(index)+'\n\n'+bla[index]}
 
 	if strd[0]==prefix and strd[1]=="tugas":
 		if "sekolah" in strd :
