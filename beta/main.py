@@ -78,7 +78,7 @@ def main():
 		kl="sudah dengan link "+link+" atem "+atem+" cmid "+cmid
 
 		reply={"reply":kl}
-		return jsonify(reply)
+		
 
 	if strd[0]==prefix and strd[1]=="nyari":
 
