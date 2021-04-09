@@ -56,6 +56,9 @@ def main():
 
 		bla=[]
 
+		reply={"reply":"dah"}
+		return jsonify(reply)
+
 		for i in range (int(strd[5])):
 
 			jh=BeautifulSoup(s.get(f"{link}mod/quiz/attempt.php?attempt={atem}&cmid={cmid}&page={i}").text,"html.parser")
