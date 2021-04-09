@@ -56,7 +56,7 @@ def main():
 
 		bla=[]
 
-		for i in range (9):
+		for i in range (strd[5]):
 
 			jh=BeautifulSoup(s.get(f"{link}mod/quiz/attempt.php?attempt={atem}&cmid={cmid}&page={i}").text,"html.parser")
 
