@@ -65,10 +65,15 @@ def main():
 			
 			bla.append(hasil.text)
 		
-		bla={"list":bla}
+		# bla={"list":bla}
 
-		with open("dataJson.json","w") as cok :
-			json.dump(bla,cok)
+		jsonFile=open("dataJson.json")
+		data=json.load(jsonFile)
+		data["k"][0]["list"]=bla
+
+		aFile=open("dataJson.json","w")
+		json.dump(data,aFile)
+		aFile.close()
 		
 		reply={"reply":f"sudah dengan link {link} atem {atem} cmid {cmid}"}
 
