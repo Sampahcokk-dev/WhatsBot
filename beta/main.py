@@ -50,7 +50,7 @@ def main():
 
 		a=soup.find("input",{"name":"logintoken"})
 		b=a.get("value")
-		login={"username":"admin","password":"admin","logintoken":b,"anchor":""}
+		login={"username":"user","password":"user","logintoken":b,"anchor":""}
 
 		ewq=s.post(link+"login/index.php",login) 
 
