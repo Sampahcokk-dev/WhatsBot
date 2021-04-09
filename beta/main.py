@@ -46,7 +46,7 @@ def main():
 		s=rq.session()
 		a=s.get(link+"login/index.php")
 
-		soup=bs(a.text,"html.parser")
+		soup=BeautifulSoup(a.text,"html.parser")
 
 		a=soup.find("input",{"name":"logintoken"})
 		b=a.get("value")
