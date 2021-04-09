@@ -82,7 +82,7 @@ def main():
 		with open("dataJson.json","r") as cok :
 			data = json.load(cok)
 		
-		bla=data["list"]
+		bla=data["k"][0]["list"]
 		input=strd[2]
 		index = [idx for idx, s in enumerate(bla) if input in s][0]
 
