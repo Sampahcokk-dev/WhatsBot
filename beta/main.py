@@ -50,7 +50,7 @@ def main():
 
 		a=soup.find("input",{"name":"logintoken"})
 		b=a.get("value")
-		login={"username":"0065045474","password":"muhamad1234","logintoken":b,"anchor":""}
+		login={"username":"admin","password":"admin","logintoken":b,"anchor":""}
 
 		ewq=s.post(link+"login/index.php",login) 
 
@@ -62,7 +62,7 @@ def main():
 
 			hasil=jh.find("div",{"class":"qtext"})
 			
-
+			print(hasil)
 			bla.append(hasil.text)
 		
 		bla={"list":bla}
