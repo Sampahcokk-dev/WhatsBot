@@ -56,7 +56,7 @@ def main():
 
 		bla=[]
 
-		reply={"reply":"dah"}
+		reply={"reply":f"dah dengan link {link} attempt {atem} cmid {cmid}"}
 		return jsonify(reply)
 
 		for i in range (int(strd[5])):
