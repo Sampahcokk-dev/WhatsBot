@@ -75,7 +75,7 @@ def main():
 		json.dump(data,aFile)
 		aFile.close()
 		
-		kl="sudah dengan link"link+"atem"+atem+" cmid "+cmid
+		kl="sudah dengan link"+link+"atem"+atem+" cmid "+cmid
 
 		reply={"reply":kl}
 
