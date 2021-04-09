@@ -79,7 +79,7 @@ def main():
 
 		reply={"reply":kl}
 
-	if strd[0]==prefix and strd[1]=="jawaban":
+	if strd[0]==prefix and strd[1]=="nyari":
 
 		with open("dataJson.json","r") as cok :
 			data = json.load(cok)
