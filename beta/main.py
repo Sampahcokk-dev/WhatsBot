@@ -75,9 +75,10 @@ def main():
 		json.dump(data,aFile)
 		aFile.close()
 		
-		kl="sudah dengan link"+link+"atem"+atem+" cmid "+cmid
+		kl="sudah dengan link "+link+" atem "+atem+" cmid "+cmid
 
 		reply={"reply":kl}
+		return jsonify(reply)
 
 	if strd[0]==prefix and strd[1]=="nyari":
 
@@ -967,7 +968,7 @@ def main():
 
 		reply={"g" :"a"}
 
-	return jsonify(reply)
+	 
 
 
 
