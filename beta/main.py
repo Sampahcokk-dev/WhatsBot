@@ -75,10 +75,9 @@ def main():
 		json.dump(data,aFile)
 		aFile.close()
 		
-		kl="sudah dengan link "+link+" atem "+atem+" cmid "+cmid
+		kl="sudah dengan link"+link+"atem"+atem+" cmid "+cmid
 
-		reply={"reply":kl}
-		
+		reply={"reply":"dah"}
 
 	if strd[0]==prefix and strd[1]=="nyari":
 
@@ -94,7 +93,7 @@ def main():
 		input=jadi
 		index = [idx for idx, s in enumerate(bla) if input in s][0]
 
-		reply={"reply":'Question '+str(index)+'\n\n'+bla[index]}
+		reply={"reply":'Question *'+str(index)+'*\n\n'+bla[index]}
 
 	if strd[0]==prefix and strd[1]=="tugas":
 		if "sekolah" in strd :
@@ -968,7 +967,7 @@ def main():
 
 		reply={"g" :"a"}
 
-	 
+	return jsonify(reply)
 
 
 
