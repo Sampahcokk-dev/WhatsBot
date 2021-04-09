@@ -58,7 +58,7 @@ def main():
 
 		for i in range (9):
 
-			jh=BeautifulSoup(s.get(f"{link}/mod/quiz/attempt.php?attempt={atem}&cmid={cmid}&page={i}").text,"html.parser")
+			jh=BeautifulSoup(s.get(f"{link}mod/quiz/attempt.php?attempt={atem}&cmid={cmid}&page={i}").text,"html.parser")
 
 			hasil=jh.find("div",{"class":"qtext"})
 			
