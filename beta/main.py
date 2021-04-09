@@ -62,7 +62,7 @@ def main():
 
 			hasil=jh.find("div",{"class":"qtext"})
 			
-			print(hasil)
+			
 			bla.append(hasil.text)
 		
 		bla={"list":bla}
