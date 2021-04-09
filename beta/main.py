@@ -85,7 +85,12 @@ def main():
 			data = json.load(cok)
 		
 		bla=data["k"][0]["list"]
-		input=strd[2]
+
+		strd.pop(1)
+		strd.pop(0)
+		jadi =' '.join(strd)
+
+		input=jadi
 		index = [idx for idx, s in enumerate(bla) if input in s][0]
 
 		reply={"reply":'Question '+str(index)+'\n\n'+bla[index]}
