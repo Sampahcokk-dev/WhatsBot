@@ -80,7 +80,7 @@ def main():
 	if strd[0]==prefix and strd[1]=="jawaban":
 
 		with open("dataJson.json","r") as cok :
-			data = json.load(f)
+			data = json.load(cok)
 		
 		bla=data["list"]
 		input=strd[2]
