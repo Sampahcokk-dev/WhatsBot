@@ -33,6 +33,14 @@ def main():
 
 	prefix=data["k"][0]["prefix"]
 
+	
+	if message in data["k"][0]["kataKotor"]:
+
+		bla=data["k"][0]["kataKotor"]
+		index = [idx for idx, s in enumerate(bla) if message in s][0]
+
+		reply={"reply":f"""*{index}*\n\nAl Imam Tirmidzi meriwayatkan dalam Sunnahnya, dimana Rasulullacah shallallahu ‘alayhi wa sallam bersabda:\n\nمَا شَيْءٌ أَثْقَلُ فِيْ مِيْزَانِ الْمُؤْمِنِ يَوْمَ الْقِيَامَةِ مِنْ خُلُقٍ حَسَنٍ وَإِنَّ اللهَ لَيُبْغِضُ الْفَاحِشَ الْبَذِيْء\n“Sesungguhnya tidak ada sesuatu apapun yang paling berat ditimbangan kebaikan seorang mu’min pada hari kiamat seperti akhlaq yang mulia, dan sungguh-sungguh (benar-benar) Allah benci dengan orang yang lisannya kotor dan kasar.”\n\n(Hadits Riwayat At Tirmidzi nomor 2002, hadīts ini hasan shahīh, lafazh ini milik At Tirmidzi, lihat Silsilatul Ahadits Ash Shahihah No 876)."""}
+
 	strd = message.split(" ")
 
 	if strd[0]==prefix and strd[1]=="set":
@@ -59,8 +67,10 @@ def main():
 		reply={"reply":f"dah dengan link {link} attempt {atem} cmid {cmid}"}
 		return jsonify(reply)
 
-		for i in range (int(strd[5])):
+		angka=int(strd[5]) + 1
 
+		for i in range (angka):
+               
 			jh=BeautifulSoup(s.get(f"{link}mod/quiz/attempt.php?attempt={atem}&cmid={cmid}&page={i}").text,"html.parser")
 
 			hasil=jh.find("div",{"class":"qtext"})
@@ -97,6 +107,9 @@ def main():
 		index = [idx for idx, s in enumerate(bla) if input in s][0]
 
 		reply={"reply":'Question *'+str(index)+'*\n\n'+bla[index]}
+
+	
+
 
 	if strd[0]==prefix and strd[1]=="tugas":
 		if "sekolah" in strd :
