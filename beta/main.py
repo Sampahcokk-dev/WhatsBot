@@ -30,18 +30,18 @@ def main():
 	message=request.form["message"]
 	jsonFile=open("dataJson.json")
 	data=json.load(jsonFile)
-
+	strd = message.split(" ")
 	prefix=data["k"][0]["prefix"]
 
+	for i in range(len(strd)):
+		if strd[i] in data["k"][0]["kataKotor"]:
+
+			bla=data["k"][0]["kataKotor"]
+			index = [idx for idx, s in enumerate(bla) if message in s][0]
+
+			reply={"reply":f"""*{str(bla[index])}*\n\nAl Imam Tirmidzi meriwayatkan dalam Sunnahnya, dimana Rasulullacah shallallahu ‘alayhi wa sallam bersabda:\n\nمَا شَيْءٌ أَثْقَلُ فِيْ مِيْزَانِ الْمُؤْمِنِ يَوْمَ الْقِيَامَةِ مِنْ خُلُقٍ حَسَنٍ وَإِنَّ اللهَ لَيُبْغِضُ الْفَاحِشَ الْبَذِيْء\n“Sesungguhnya tidak ada sesuatu apapun yang paling berat ditimbangan kebaikan seorang mu’min pada hari kiamat seperti akhlaq yang mulia, dan sungguh-sungguh (benar-benar) Allah benci dengan orang yang lisannya kotor dan kasar.”\n\n(Hadits Riwayat At Tirmidzi nomor 2002, hadīts ini hasan shahīh, lafazh ini milik At Tirmidzi, lihat Silsilatul Ahadits Ash Shahihah No 876)."""}
+
 	
-	if message in data["k"][0]["kataKotor"]:
-
-		bla=data["k"][0]["kataKotor"]
-		index = [idx for idx, s in enumerate(bla) if message in s][0]
-
-		reply={"reply":f"""*{str(bla[index])}*\n\nAl Imam Tirmidzi meriwayatkan dalam Sunnahnya, dimana Rasulullacah shallallahu ‘alayhi wa sallam bersabda:\n\nمَا شَيْءٌ أَثْقَلُ فِيْ مِيْزَانِ الْمُؤْمِنِ يَوْمَ الْقِيَامَةِ مِنْ خُلُقٍ حَسَنٍ وَإِنَّ اللهَ لَيُبْغِضُ الْفَاحِشَ الْبَذِيْء\n“Sesungguhnya tidak ada sesuatu apapun yang paling berat ditimbangan kebaikan seorang mu’min pada hari kiamat seperti akhlaq yang mulia, dan sungguh-sungguh (benar-benar) Allah benci dengan orang yang lisannya kotor dan kasar.”\n\n(Hadits Riwayat At Tirmidzi nomor 2002, hadīts ini hasan shahīh, lafazh ini milik At Tirmidzi, lihat Silsilatul Ahadits Ash Shahihah No 876)."""}
-
-	strd = message.split(" ")
 
 	if strd[0]==prefix and strd[1]=="set":
 				
