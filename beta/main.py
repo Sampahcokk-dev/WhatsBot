@@ -33,10 +33,10 @@ def main():
 	strd = message.split(" ")
 	prefix=data["k"][0]["prefix"]
 
-	cekString=[x.lower() for x in strd]
-
-	for i in range(len(cekString)):
-		if strd[i] in data["k"][0]["kataKotor"]:
+	kecilString=[x.lower() for x in strd]
+	
+	for i in range(len(strd)):
+		if kecilString[i] in data["k"][0]["kataKotor"]:
 
 			choice=["""Al Imam Tirmidzi meriwayatkan dalam Sunnahnya, dimana Rasulullacah shallallahu ‘alayhi wa sallam bersabda:\n\nمَا شَيْءٌ أَثْقَلُ فِيْ مِيْزَانِ الْمُؤْمِنِ يَوْمَ الْقِيَامَةِ مِنْ خُلُقٍ حَسَنٍ وَإِنَّ اللهَ لَيُبْغِضُ الْفَاحِشَ الْبَذِيْء\n“Sesungguhnya tidak ada sesuatu apapun yang paling berat ditimbangan kebaikan seorang mu’min pada hari kiamat seperti akhlaq yang mulia, dan sungguh-sungguh (benar-benar) Allah benci dengan orang yang lisannya kotor dan kasar.”\n\n(Hadits Riwayat At Tirmidzi nomor 2002, hadīts ini hasan shahīh, lafazh ini milik At Tirmidzi, lihat Silsilatul Ahadits Ash Shahihah No 876).""",'''Sifat orang beriman pula tidaklah mengumpat dengan perkataan dan tingkah laku. Ancaman bagi mereka yang mencela seperti itu jelas dalam potongan ayat Surat Al Humazah berikut:\n\nوَيْلٌ لِكُلِّ هُمَزَةٍ لُمَزَةٍ\n\n“Kecelakaanlah bagi setiap pengumpat lagi pencela” (QS. Al Humazah: 1)\n\nAyat ini adalah ancaman bagi orang yang mencela yang lain dengan perbuatan dan mengumpat dengan ucapan. Hamaz adalah mencela dan mengumpat orang lain dengan isyarat dan perbuatan. Sedangkan lamaz adalah mencela orang lain dengan ucapan.\nAncaman wail dalam ayat di atas adalah ancaman berat. Salah satu tafsiran menyatakan wail adalah lembah di neraka..''','“Yang banyak mencela, yang kian ke mari menghambur fitnah.” (QS. Al Qalam: 11).\n'+
 			'\n'+
@@ -47,7 +47,7 @@ def main():
 			'Semoga kita diberi kekuatan untuk menjadi Muslim yang baik, taat perintah Allah dan Rasul-Nya, termasuk orang yang tidak berkata kasar, kotor, keji, mengumpat, dan sebagainya. Aamiin.']
 
 			bla=data["k"][0]["kataKotor"]
-			index = [idx for idx, s in enumerate(bla) if strd[i] in s][0]
+			index = [idx for idx, s in enumerate(bla) if kecilString[i] in s][0]
 			reply={"reply":f"*{str(bla[index])}*\n\n"+random.choice(choice)}
 			break
 			
@@ -141,7 +141,7 @@ def main():
 			json.dump(data,aFile)
 			aFile.close()
 
-			reply={"reply":f"kata {bla} berhasil ditambahkan"}
+			reply={"reply":f"kata {bla} berhasil ditambahakn"}
 
 
 	if strd[0]==prefix and strd[1]=="tugas":
